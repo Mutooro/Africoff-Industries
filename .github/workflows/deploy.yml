@@ -30,9 +30,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Validate Nuxt build
-        run: npm run build
-
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
 
@@ -51,6 +48,7 @@ jobs:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
+      # This step handles both compiling your Nuxt project and validating the build
       - name: Build Vercel deployment
         run: vercel build --prod --token="$VERCEL_TOKEN"
         env:
