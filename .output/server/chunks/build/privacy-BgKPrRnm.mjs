@@ -1,0 +1,53 @@
+import { a as useSeoMeta$1 } from '../virtual/entry.mjs';
+import { _ as _plugin_vue_export_helper_default } from './_plugin-vue_export-helper-BOaGB7Aw.mjs';
+import { defineComponent, useSSRContext } from 'vue';
+import { ssrRenderAttrs, ssrRenderStyle } from 'vue/server-renderer';
+import 'nostics';
+import 'nostics/formatters/ansi';
+import '../_/nitro.mjs';
+import 'node:http';
+import 'node:https';
+import 'node:events';
+import 'node:buffer';
+import 'node:fs';
+import 'node:path';
+import 'node:crypto';
+import 'node:url';
+import '../routes/renderer.mjs';
+import 'unhead/server';
+import 'unhead/legacy';
+import 'unhead/plugins';
+import 'vue-bundle-renderer/runtime';
+import 'devalue';
+import 'vue-router';
+import 'unhead/utils';
+
+//#region app/pages/privacy.vue?vue&type=script&setup=true&lang.ts
+var privacy_vue_vue_type_script_setup_true_lang_default = /*@__PURE__*/ defineComponent({
+	__name: "privacy",
+	__ssrInlineRender: true,
+	setup(__props) {
+		useSeoMeta$1({
+			title: "Privacy Policy & EUDR Data Governance · AFRICOFF Industries",
+			description: "AFRICOFF Industries data privacy policy, GIS polygon information governance, and compliance with EUDR and Ugandan data protection regulations."
+		});
+		return (_ctx, _push, _parent, _attrs) => {
+			_push(`<div${ssrRenderAttrs(_attrs)} data-v-175393c9><section class="page-intro" data-v-175393c9><div class="shell" data-v-175393c9><div class="page-intro-inner" data-v-175393c9><span class="section-label" data-v-175393c9>Legal &amp; data governance</span><h1 data-v-175393c9>Privacy Policy &amp; <em data-v-175393c9>Traceability Standards</em></h1><p data-v-175393c9>How AFRICOFF Industries (U) Limited manages business inquiries, smallholder farmer polygon records, and trade data.</p></div></div></section><section class="py-section-lg bg-offwhite" data-v-175393c9><div class="shell" style="${ssrRenderStyle({ "max-width": "860px" })}" data-v-175393c9><div class="legal-card" data-v-175393c9><span class="section-label" data-v-175393c9>Effective Date: September 2026</span><h2 class="section-title" data-v-175393c9>Data Protection &amp; Privacy Commitment</h2><div class="legal-content" data-v-175393c9><h3 data-v-175393c9>1. Introduction</h3><p data-v-175393c9> AFRICOFF Industries (U) Limited (&quot;AFRICOFF&quot;, &quot;we&quot;, &quot;our&quot;) is dedicated to upholding the highest standards of data security, ethical sourcing transparency, and personal privacy in compliance with the Uganda Data Protection and Privacy Act (2019) and the European Union General Data Protection Regulation (GDPR). </p><h3 data-v-175393c9>2. Information We Collect</h3><p data-v-175393c9>We collect information in three operational contexts:</p><ul data-v-175393c9><li data-v-175393c9><strong data-v-175393c9>Business &amp; Trade Inquiries:</strong> Contact name, corporate email address, telephone numbers, country of operation, and product specifications provided via our website or email.</li><li data-v-175393c9><strong data-v-175393c9>Out-Grower Farmer Registry:</strong> Farmer names, cooperative affiliation, national identification numbers, farm plot GPS polygon coordinates, tree counts, and harvest delivery records for EUDR compliance.</li><li data-v-175393c9><strong data-v-175393c9>Website Analytics:</strong> Anonymous diagnostic telemetry to improve user experience and site navigation.</li></ul><h3 data-v-175393c9>3. EUDR &amp; GIS Polygon Data Stewardship</h3><p data-v-175393c9> In accordance with European Union Regulation (EU) 2023/1115 (EUDR), farm geolocation coordinates and polygon maps collected from our out-grower network are utilized exclusively to substantiate due-diligence statements, verify zero-deforestation compliance after December 31, 2020, and ensure legal harvest authorization. Farmer identities are safeguarded with strict role-based access controls. </p><h3 data-v-175393c9>4. Data Sharing &amp; Third Parties</h3><p data-v-175393c9> AFRICOFF does not sell, rent, or monetize personal information. Data is shared only with certified regulatory entities (such as the Uganda Coffee Development Authority and EU Information System) and authorized logistics providers solely for freight fulfillment and phytosanitary verification. </p><h3 data-v-175393c9>5. Security &amp; Retention</h3><p data-v-175393c9> All trade and farmer data is stored in encrypted, redundant cloud repositories adhering to ISO/IEC 27001 standards. Due diligence records are retained for a minimum of 5 years in alignment with statutory EUDR mandates. </p><h3 data-v-175393c9>6. Contact Our Data Protection Officer</h3><p data-v-175393c9> For inquiries regarding data access, corrections, or polygon registration status, contact our compliance desk at: <br data-v-175393c9><br data-v-175393c9><strong data-v-175393c9>Data Protection Desk:</strong> <a href="mailto:privacy@africoff.com" style="${ssrRenderStyle({
+				"color": "var(--leaf)",
+				"font-weight": "700"
+			})}" data-v-175393c9>privacy@africoff.com</a><br data-v-175393c9> AFRICOFF Industries (U) Limited, 52 Kampala Road, King Fahad Plaza, 3rd Floor, P.O Box 178863, Kampala, Uganda. </p></div></div></div></section></div>`);
+		};
+	}
+});
+//#endregion
+//#region app/pages/privacy.vue
+var _sfc_setup = privacy_vue_vue_type_script_setup_true_lang_default.setup;
+privacy_vue_vue_type_script_setup_true_lang_default.setup = (props, ctx) => {
+	const ssrContext = useSSRContext();
+	(ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/privacy.vue");
+	return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
+};
+var privacy_default = /*#__PURE__*/ _plugin_vue_export_helper_default(privacy_vue_vue_type_script_setup_true_lang_default, [["__scopeId", "data-v-175393c9"]]);
+
+export { privacy_default as default };
+//# sourceMappingURL=privacy-BgKPrRnm.mjs.map
