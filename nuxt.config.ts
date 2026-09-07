@@ -11,7 +11,7 @@ export default defineNuxtConfig({
       titleTemplate: '%s · AFRICOFF Industries (U) Limited',
       meta: [
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'theme-color', content: '#0B221A' },
+        { name: 'theme-color', content: '#1B5E20' },
         { name: 'description', content: 'AFRICOFF Industries connects Ugandan coffee growers with quality processing and global markets.' },
         { name: 'robots', content: 'index, follow' },
       ],

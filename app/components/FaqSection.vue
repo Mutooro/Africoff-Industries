@@ -30,9 +30,9 @@ function toggleFaq(index: number) {
         <!-- Right Accordion -->
         <div>
           <span class="section-label">Frequently Asked Questions</span>
-          <h2 class="section-title">
-            Answers on Sourcing, Traceability & <em>Partnership</em>
-          </h2>
+          <h3 class="section-title">
+            Answers on Sourcing, Traceability and <em>Partnership</em>
+          </h3>
           <p class="section-subtitle" style="margin-bottom: 2rem;">
             Common inquiries from international coffee buyers, roasters, out-grower farmers, and development partners.
           </p>

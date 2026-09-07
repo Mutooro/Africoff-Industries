@@ -16,12 +16,9 @@ type LazyComponent<T> = DefineComponent<HydrationStrategies, {}, {}, {}, {}, {},
 
 export const CallToAction: typeof import("../app/components/CallToAction.vue")['default']
 export const FaqSection: typeof import("../app/components/FaqSection.vue")['default']
-export const HeroTypewriter: typeof import("../app/components/HeroTypewriter.vue")['default']
 export const HomeHero: typeof import("../app/components/HomeHero.vue")['default']
 export const ObjectivesSection: typeof import("../app/components/ObjectivesSection.vue")['default']
-export const PageHero: typeof import("../app/components/PageHero.vue")['default']
 export const ProjectsShowcase: typeof import("../app/components/ProjectsShowcase.vue")['default']
-export const QuantaBizHero: typeof import("../app/components/QuantaBizHero.vue")['default']
 export const SafeImage: typeof import("../app/components/SafeImage.vue")['default']
 export const ServicesGrid: typeof import("../app/components/ServicesGrid.vue")['default']
 export const SiteFooter: typeof import("../app/components/SiteFooter.vue")['default']
@@ -53,12 +50,9 @@ export const Body: typeof import("../node_modules/nuxt/dist/head/runtime/compone
 export const NuxtIsland: typeof import("../node_modules/nuxt/dist/app/components/nuxt-island")['default']
 export const LazyCallToAction: LazyComponent<typeof import("../app/components/CallToAction.vue")['default']>
 export const LazyFaqSection: LazyComponent<typeof import("../app/components/FaqSection.vue")['default']>
-export const LazyHeroTypewriter: LazyComponent<typeof import("../app/components/HeroTypewriter.vue")['default']>
 export const LazyHomeHero: LazyComponent<typeof import("../app/components/HomeHero.vue")['default']>
 export const LazyObjectivesSection: LazyComponent<typeof import("../app/components/ObjectivesSection.vue")['default']>
-export const LazyPageHero: LazyComponent<typeof import("../app/components/PageHero.vue")['default']>
 export const LazyProjectsShowcase: LazyComponent<typeof import("../app/components/ProjectsShowcase.vue")['default']>
-export const LazyQuantaBizHero: LazyComponent<typeof import("../app/components/QuantaBizHero.vue")['default']>
 export const LazySafeImage: LazyComponent<typeof import("../app/components/SafeImage.vue")['default']>
 export const LazyServicesGrid: LazyComponent<typeof import("../app/components/ServicesGrid.vue")['default']>
 export const LazySiteFooter: LazyComponent<typeof import("../app/components/SiteFooter.vue")['default']>

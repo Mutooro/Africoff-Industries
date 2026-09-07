@@ -35,9 +35,9 @@ useSeoMeta({
       <div class="shell">
         <div class="center-text" style="margin-bottom: 3.5rem;">
           <span class="section-label">Our Guiding Purpose</span>
-          <h2 class="section-title">
+          <h3 class="section-title">
             Driven by Quality, <em>Sustained by Community</em>
-          </h2>
+          </h3>
         </div>
 
         <div class="vision-mission-grid">
@@ -88,9 +88,9 @@ useSeoMeta({
 
           <div>
             <span class="section-label">Our Heritage & Origins</span>
-            <h2 class="section-title">
+            <h3 class="section-title">
               Rooted in the Rich Soils of <em>Uganda’s Highlands</em>
-            </h2>
+            </h3>
             <p class="lead" style="margin-bottom: 1.25rem;">
               Uganda is blessed with some of the world's most exceptional coffee-growing microclimates, from the mist-covered volcanic slopes of Mount Elgon to the snowcapped Rwenzori mountains and lush Lake Victoria basin.
             </p>
@@ -117,9 +117,9 @@ useSeoMeta({
       <div class="shell">
         <div class="center-text" style="margin-bottom: 3.5rem;">
           <span class="section-label">Foundational Principles</span>
-          <h2 class="section-title">
+          <h3 class="section-title">
             The Values That <em>Guide Every Harvest</em>
-          </h2>
+          </h3>
           <p class="section-subtitle">
             Integrity, stewardship, and equity are embedded across every level of our operations and farmer partnerships.
           </p>
@@ -140,9 +140,9 @@ useSeoMeta({
       <div class="shell">
         <div class="center-text" style="margin-bottom: 3.5rem;">
           <span class="section-label">Leadership &amp; Governance</span>
-          <h2 class="section-title">
+          <h3 class="section-title">
             The People Behind <em>Every Harvest</em>
-          </h2>
+          </h3>
           <p class="section-subtitle team-subtitle">
             Behind AFRICOFF’s growth is a dedicated leadership team committed to ethical sourcing, financial integrity, and operational excellence — the people who turn Uganda’s coffee promise into a dependable supply for partners worldwide.
           </p>
@@ -239,8 +239,8 @@ useSeoMeta({
   background: #ffffff;
   border-radius: 20px;
   padding: 3rem 2.5rem;
-  border: 1px solid var(--line);
-  box-shadow: var(--card-shadow);
+  border: var(--card-border);
+  box-shadow: var(--shadow-green);
   transition: var(--transition);
 }
 
@@ -267,38 +267,12 @@ useSeoMeta({
   gap: 1.75rem;
 }
 
-.val-card {
-  background: #ffffff;
-  border-radius: 16px;
-  padding: 2.2rem 1.8rem;
-  border: 1px solid var(--line);
-  box-shadow: 0 4px 15px rgba(26, 61, 43, 0.04);
-  transition: var(--transition);
-}
-
-.val-card:hover {
-  border-color: var(--leaf);
-  transform: translateY(-3px);
-  box-shadow: var(--card-shadow);
-}
-
 .val-num {
   font-family: var(--heading-font);
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--gold);
   margin-bottom: 0.75rem;
-}
-
-.val-card h3 {
-  font-size: 1.25rem;
-  margin-bottom: 0.65rem;
-}
-
-.val-card p {
-  font-size: 0.92rem;
-  color: var(--muted);
-  line-height: 1.6;
 }
 
 .regions-grid {
@@ -364,21 +338,23 @@ useSeoMeta({
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 2rem;
+  align-items: stretch;
 }
 
 .team-card {
   background: #ffffff;
   border-radius: 20px;
   padding: 2.6rem 2rem;
-  border: 1px solid var(--line);
-  box-shadow: var(--card-shadow);
+  border: var(--card-border);
+  box-shadow: var(--shadow-green);
   transition: var(--transition);
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100%;
 }
 
 .team-card:hover {

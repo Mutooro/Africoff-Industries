@@ -115,7 +115,8 @@ async function submitForm() {
                 <div class="pill-icon"><Phone :size="22" :stroke-width="2" /></div>
                 <div>
                   <h4>Phone</h4>
-                  <p>+256 784 851 072</p>
+                  <p><a href="tel:+256784851072" style="color: var(--forest); font-weight: 700;">+256 784 851 072</a></p>
+                  <p><a href="tel:+256392964836" style="color: var(--forest); font-weight: 700;">Office Line: +256 392 964836</a></p>
                   <div style="margin-top: 0.5rem;">
                     <a href="https://wa.me/256784851072" target="_blank" rel="noopener" class="btn-primary btn-sm">
                       <span>Chat on WhatsApp</span>
@@ -270,13 +271,13 @@ async function submitForm() {
 
 .contact-pill-card {
   background: #ffffff;
-  border: 1px solid var(--line);
+  border: var(--card-border);
   padding: 1.5rem 1.75rem;
   border-radius: 16px;
   display: flex;
   gap: 1.25rem;
   align-items: flex-start;
-  box-shadow: 0 4px 15px rgba(26, 61, 43, 0.03);
+  box-shadow: var(--shadow-green);
   transition: var(--transition);
 }
 
@@ -352,7 +353,7 @@ async function submitForm() {
 
 .custom-input {
   background: var(--offwhite);
-  border: 1.5px solid rgba(26, 61, 43, 0.15);
+  border: 1.5px solid rgba(56, 142, 60, 0.22);
   border-radius: 10px;
   padding: 0.85rem 1.1rem;
   /* 16px minimum prevents iOS Safari auto-zoom on focus */
@@ -366,7 +367,7 @@ async function submitForm() {
 .custom-input:focus {
   border-color: var(--leaf);
   background: #ffffff;
-  box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.15);
+  box-shadow: 0 0 0 3px rgba(56, 142, 60, 0.18);
 }
 
 .form-success-banner {

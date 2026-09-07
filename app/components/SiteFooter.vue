@@ -33,7 +33,7 @@ function handleSubscribe() {
             <a href="https://twitter.com" target="_blank" rel="noopener" class="social-pill" aria-label="Twitter"><AtSign :size="16" /></a>
             <a href="https://facebook.com" target="_blank" rel="noopener" class="social-pill" aria-label="Facebook"><ThumbsUp :size="16" /></a>
             <a href="https://instagram.com" target="_blank" rel="noopener" class="social-pill" aria-label="Instagram"><Camera :size="16" /></a>
-            <a href="https://wa.me/256700000000" target="_blank" rel="noopener" class="social-pill" aria-label="WhatsApp"><MessageCircle :size="16" /></a>
+            <a href="https://wa.me/256784851072" target="_blank" rel="noopener" class="social-pill" aria-label="WhatsApp"><MessageCircle :size="16" /></a>
             <NuxtLink to="/contact#wechat" class="social-pill" aria-label="WeChat (scan QR code on the contact page)"><QrCode :size="16" /></NuxtLink>
           </div>
         </div>
@@ -61,7 +61,7 @@ function handleSubscribe() {
           <ul class="footer-links">
             <li><NuxtLink to="/products">Bugisu Arabica AA/AB</NuxtLink></li>
             <li><NuxtLink to="/products">Rwenzori Natural Drugar</NuxtLink></li>
-            <li><NuxtLink to="/products">Screen 18 Washed Robusta</NuxtLink></li>
+            <li><NuxtLink to="/products">Natural Uganda Robusta (NUR)</NuxtLink></li>
             <li><NuxtLink to="/activities">EUDR Polygon Mapping</NuxtLink></li>
             <li><NuxtLink to="/impact">Women in Coffee Program</NuxtLink></li>
             <li><NuxtLink to="/contact">Sample Request Service</NuxtLink></li>
@@ -91,6 +91,7 @@ function handleSubscribe() {
             <p><strong>PO Box:</strong> 178863, Kampala, Uganda</p>
             <p><strong>Email:</strong> info@africoffindustries.com</p>
             <p><strong>Phone:</strong> +256 784 851 072</p>
+            <p><strong>Office Line:</strong> <a href="tel:+256392964836">+256 392 964836</a></p>
           </div>
         </div>
       </div>
@@ -112,7 +113,7 @@ function handleSubscribe() {
 
 <style scoped>
 .site-footer {
-  background: var(--forest-dark);
+  background: #000000;
   color: #ffffff;
   padding: 5.5rem 0 2rem;
   border-top: 1px solid rgba(201, 168, 76, 0.2);
@@ -127,7 +128,7 @@ function handleSubscribe() {
 }
 
 .brand-col .footer-logo img {
-  height: 48px;
+  height: 64px;
   width: auto;
   margin-bottom: 1.25rem;
 }
@@ -141,7 +142,7 @@ function handleSubscribe() {
 
 .footer-origin-badge {
   display: inline-block;
-  background: rgba(45, 106, 79, 0.35);
+  background: rgba(76, 175, 80, 0.3);
   border: 1px solid rgba(82, 183, 136, 0.3);
   padding: 0.35rem 0.8rem;
   border-radius: 6px;

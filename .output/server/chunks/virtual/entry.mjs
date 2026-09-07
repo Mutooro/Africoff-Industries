@@ -989,7 +989,7 @@ var virtual_nuxt_node_modules_2F_cache_2Fnuxt_2F_nuxt_2Froutes_default = [
 	{
 		name: "about",
 		path: "/about",
-		component: () => import('../build/about-SfQv-Pj0.mjs')
+		component: () => import('../build/about-B2OgUZIu.mjs')
 	},
 	{
 		name: "accountability",
@@ -999,37 +999,37 @@ var virtual_nuxt_node_modules_2F_cache_2Fnuxt_2F_nuxt_2Froutes_default = [
 	{
 		name: "activities",
 		path: "/activities",
-		component: () => import('../build/activities-Doe9DqLQ.mjs')
+		component: () => import('../build/activities-ko0u7fSg.mjs')
 	},
 	{
 		name: "contact",
 		path: "/contact",
-		component: () => import('../build/contact-CXqVBZ4O.mjs')
+		component: () => import('../build/contact-CXHfQ5K6.mjs')
 	},
 	{
 		name: "impact",
 		path: "/impact",
-		component: () => import('../build/impact-g5kP0D78.mjs')
+		component: () => import('../build/impact-lbK6CRsE.mjs')
 	},
 	{
 		name: "news",
 		path: "/news",
-		component: () => import('../build/news-BGhFG4Or.mjs')
+		component: () => import('../build/news-CWqobem2.mjs')
 	},
 	{
 		name: "out-growers",
 		path: "/out-growers",
-		component: () => import('../build/out-growers-BiBdLzVn.mjs')
+		component: () => import('../build/out-growers-DrbFN0bK.mjs')
 	},
 	{
 		name: "privacy",
 		path: "/privacy",
-		component: () => import('../build/privacy-BgKPrRnm.mjs')
+		component: () => import('../build/privacy-DIEibB-Y.mjs')
 	},
 	{
 		name: "products",
 		path: "/products",
-		component: () => import('../build/products-DIUldbjS.mjs')
+		component: () => import('../build/products-D1Zny4_a.mjs')
 	},
 	{
 		name: "programs",
@@ -1044,7 +1044,7 @@ var virtual_nuxt_node_modules_2F_cache_2Fnuxt_2F_nuxt_2Froutes_default = [
 	{
 		name: "index",
 		path: "/",
-		component: () => import('../build/pages-Bk-hxeVm.mjs')
+		component: () => import('../build/pages-CIXHgady.mjs')
 	}
 ];
 //#endregion
@@ -1299,7 +1299,7 @@ function resolveLayoutName(route, name) {
 }
 //#endregion
 //#region virtual:nuxt:node_modules%2F.cache%2Fnuxt%2F.nuxt%2Flayouts.mjs
-var virtual_nuxt_node_modules_2F_cache_2Fnuxt_2F_nuxt_2Flayouts_default = { default: defineAsyncComponent(() => import('../build/default-aCdXesmS.mjs').then((m) => m.default || m)) };
+var virtual_nuxt_node_modules_2F_cache_2Fnuxt_2F_nuxt_2Flayouts_default = { default: defineAsyncComponent(() => import('../build/default-C4-7mf_X.mjs').then((m) => m.default || m)) };
 //#endregion
 //#region node_modules/nuxt/dist/app/components/nuxt-layout.js
 var LayoutLoader = defineComponent({

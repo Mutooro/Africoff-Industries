@@ -49,6 +49,7 @@ export const siteConfig = {
   shortBio: 'Leading Ugandan agro-processing enterprise connecting smallholder coffee growers with state-of-the-art processing, EUDR-compliant traceability, and premium global markets.',
   email: 'info@africoffindustries.com',
   phone: '+256 784 851 072',
+  phoneAlt: '+256 392 964836',
   whatsapp: '+256784851072',
   // TODO: replace with the company's real WeChat ID (6-20 chars: letters, numbers, - or _).
   wechat: 'AFRICOFF-UG',
@@ -57,7 +58,7 @@ export const siteConfig = {
 }
 
 export const stats = [
-  { num: '5,000+', label: 'Smallholder Farmers Supported', desc: 'Active out-growers across high-altitude coffee regions in Uganda' },
+  { num: '5,000+', label: 'Smallholder Farmers Supported', desc: 'Active Arabica & Natural Uganda Robusta (NUR) out-growers across Uganda' },
   { num: '100%', label: 'EUDR & Traceability Compliant', desc: 'Polygon-mapped plots with zero-deforestation verification' },
   { num: '40%+', label: 'Women-Led Producer Groups', desc: 'Targeted empowerment and financial inclusion initiatives' },
   { num: 'Grade A', label: 'Export Quality Standard', desc: 'Rigorous cupping and precision grading for specialty markets' },
@@ -115,7 +116,7 @@ export const activities: Activity[] = [
     title: 'Out-Growers Scheme & Agronomy Training',
     category: 'farming',
     shortDesc: 'Comprehensive farmer extension services, micro-inputs financing, and guaranteed fair-price market access.',
-    fullDesc: 'Partnering with over 5,000 smallholders through dedicated field extension officers, post-harvest training workshops, and pre-harvest financial support.',
+    fullDesc: 'Partnering with over 5,000 smallholder out-growers — producing both Arabica and Natural Uganda Robusta (NUR) — across Uganda, through dedicated field extension officers, post-harvest training workshops, and pre-harvest financial support.',
     features: ['Good Agricultural Practices (GAP) field schools', 'Quality-tiered cash bonuses directly to farming families', 'Input advances and modern pruning equipment kits'],
     icon: Handshake,
     image: '/assets/images/women.jpeg',
@@ -127,7 +128,7 @@ export const activities: Activity[] = [
     category: 'export',
     shortDesc: 'Seamless international freight, container consolidation, and direct trade relationships with specialty roasters worldwide.',
     fullDesc: 'Handling bonded warehousing, phytosanitary clearance, container packing, and maritime freight from Mombasa port to global destinations across Europe, Asia, and the Americas.',
-    features: ['GrainPro hermetic bag packaging and bulk liner containers', 'UCDA quality certification and phytosanitary clearance', 'FOB Mombasa and CIF destination port contracts'],
+    features: ['GrainPro hermetic bag packaging and bulk liner containers', 'Coffee Department (Ministry of Agriculture, Animal Industry & Fisheries) quality certification and phytosanitary clearance', 'FOB Mombasa and CIF destination port contracts'],
     icon: Ship,
     image: '/assets/images/picking.jpg',
   },
@@ -246,16 +247,16 @@ export const products: ProductItem[] = [
     description: 'Hand-picked ripe cherries naturally dried on raised mesh beds in the misty Rwenzori foothills. Heavy body, jammy blueberry notes, and dark cacao finish.',
   },
   {
-    id: 'robusta-screen18',
-    name: 'Uganda Screen 18 Washed & Natural Robusta',
+    id: 'natural-uganda-robusta',
+    name: 'Natural Uganda Robusta (NUR)',
     type: 'Robusta',
-    grade: 'Screen 18 Extra Bold',
+    grade: 'Screens 12, 15 & 18',
     region: 'Central & Lake Victoria Basin',
     altitude: '1,100m - 1,400m ASL',
     process: 'Washed / Natural Clean Prepared',
-    screen: '18',
+    screen: '12, 15 & 18',
     cupProfile: ['Dark Cocoa', 'Toasted Hazelnut', 'Cedarwood', 'Dense Crema'],
-    description: 'Renowned worldwide for its neutral cup, rich crema generation, and bold body. Perfect foundation for specialty espresso blends and instant coffee manufacturing.',
+    description: 'Our Natural Uganda Robusta (NUR) is sourced from out-growers across Uganda and is available in Screen 12, Screen 15, and Screen 18 grades. Renowned worldwide for its neutral cup, rich crema generation, and bold body — the perfect foundation for specialty espresso blends and instant coffee manufacturing.',
   },
   {
     id: 'africoff-signature-roast',
@@ -320,8 +321,9 @@ export const farmServices: FarmService[] = [
   {
     id: 'nursery-beds',
     name: 'Nursery Bed Establishment',
-    summary: 'We establish and manage nursery beds, multiplying disease-tolerant, high-yield coffee seedlings for our out-growers and new commercial plantings.',
+    summary: 'We establish and manage nursery beds — including our own nursery bed in Kakiri along Hoima Road — multiplying disease-tolerant, high-yield coffee seedlings for our out-growers and new commercial plantings.',
     points: [
+      'Our own nursery bed in Kakiri, along Hoima Road',
       'Certified, disease-tolerant Arabica & Robusta seedling multiplication',
       'Quality seed sourcing and nursery management',
       'Planting guidance and post-planting agronomy follow-up',
@@ -463,7 +465,7 @@ export const faqs: FaqItem[] = [
   {
     category: 'Sourcing & Export',
     question: 'What coffee varieties and grades does AFRICOFF export?',
-    answer: 'We supply green coffee beans including Bugisu Arabica (Grades AA, AB, PB), Rwenzori Natural Drugar, and High-Grade Ugandan Robusta (Screen 18, 17, 15). We also offer custom micro-lots and specialty roasted beans.',
+    answer: 'We supply green coffee beans including Bugisu Arabica (Grades AA, AB, PB), Rwenzori Natural Drugar, and Natural Uganda Robusta (NUR) in Screen 12, Screen 15, and Screen 18 grades. We also offer custom micro-lots and specialty roasted beans.',
   },
   {
     category: 'Compliance',
@@ -473,7 +475,7 @@ export const faqs: FaqItem[] = [
   {
     category: 'Out-Growers',
     question: 'How do smallholder farmers join the AFRICOFF Out-Growers Scheme?',
-    answer: 'Farmers with existing coffee plots in our operational districts can register at any regional hub (Mbale or Kasese). Membership includes free agronomy training, soil analysis, access to subsidized seedlings, and premium guaranteed off-take contracts.',
+    answer: 'Farmers with existing coffee plots anywhere in Uganda can register with our field team — we run out-grower schemes for both Arabica (Mount Elgon & Rwenzori) and Natural Uganda Robusta (NUR) across the country. Membership includes free agronomy training, soil analysis, access to subsidized seedlings, and premium guaranteed off-take contracts.',
   },
   {
     category: 'Quality & Samples',
@@ -524,15 +526,15 @@ export interface TeamMember {
 export const teamMembers: TeamMember[] = [
   {
     name: 'Migadde Francis',
-    role: 'Managing Director / Executive Director',
+    role: 'Managing Director / Director Production, Quality & Marketing',
     initials: 'MF',
-    bio: 'Migadde Francis provides overall strategic leadership and corporate governance as Managing Director and Executive Director. He drives the company’s growth agenda across sourcing, processing, and international exports, while championing ethical trade and shared prosperity for Uganda’s smallholder coffee farming communities.',
+    bio: 'Migadde Francis provides overall strategic leadership and corporate governance as Managing Director, and also serves as Director Production, Quality and Marketing. He drives the company’s growth agenda across sourcing, processing, and international exports, while championing ethical trade and shared prosperity for Uganda’s smallholder coffee farming communities.',
   },
   {
-    name: 'Nakasujja Brian',
+    name: 'Kasujja Brian',
     role: 'Finance',
-    initials: 'NB',
-    bio: 'Nakasujja Brian leads the finance function, overseeing budgeting, financial reporting, and export transaction management. He safeguards timely and transparent farmer payments, enforces cost discipline, and ensures the company’s operations remain accountable to partners, lenders, and regulators alike.',
+    initials: 'KB',
+    bio: 'Kasujja Brian leads the finance function, overseeing budgeting, financial reporting, and export transaction management. He safeguards timely and transparent farmer payments, enforces cost discipline, and ensures the company’s operations remain accountable to partners, lenders, and regulators alike.',
   },
   {
     name: 'Najjuko Harriet',
@@ -545,19 +547,5 @@ export const teamMembers: TeamMember[] = [
     role: 'Administration',
     initials: 'NG',
     bio: 'Nambazira Gladys supports administrative and compliance operations, managing documentation, stakeholder correspondence, and farmer-facing coordination. She maintains the records and processes that underpin AFRICOFF’s traceability and certification commitments.',
-  },
-  {
-    name: 'Operations Manager',
-    role: 'Farm Operations & Processing',
-    initials: 'OM',
-    bio: 'The Operations Manager oversees farm operations and processing across our plantations, washing stations, and milling facilities — coordinating planting, harvesting, post-harvest handling, and day-to-day plant operations to the company’s quality standards.',
-    pending: true,
-  },
-  {
-    name: 'Sales & Marketing Manager',
-    role: 'Sales, Marketing & Export',
-    initials: 'SM',
-    bio: 'The Sales & Marketing Manager leads sales, marketing, and export — building relationships with local and international buyers, growing the AFRICOFF brand across markets, and coordinating shipments from Kampala to destination ports worldwide.',
-    pending: true,
   },
 ]

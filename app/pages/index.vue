@@ -297,7 +297,7 @@ useSeoMeta({
 .polygon-visual-mock {
   height: 140px;
   border-radius: 14px;
-  background: linear-gradient(135deg, rgba(45, 106, 79, 0.4), rgba(26, 61, 43, 0.8));
+  background: linear-gradient(135deg, rgba(76, 175, 80, 0.45), rgba(27, 94, 32, 0.85));
   border: 1px solid rgba(255, 255, 255, 0.15);
   position: relative;
   overflow: hidden;
@@ -321,7 +321,7 @@ useSeoMeta({
   font-size: 0.82rem;
   font-weight: 700;
   color: #ffffff;
-  background: rgba(15, 39, 27, 0.85);
+  background: rgba(27, 94, 32, 0.85);
   padding: 0.4rem 0.9rem;
   border-radius: 100px;
   border: 1px solid var(--gold);

@@ -372,11 +372,11 @@ onUnmounted(() => {
 
 /* Title & Typewriter */
 .hh-title {
-  font-family: var(--body-font);
-  font-size: clamp(1.7rem, 2.7vw, 2.5rem);
-  font-weight: 750;
-  line-height: 1.05;
-  letter-spacing: -0.045em;
+  font-family: var(--heading-font);
+  font-size: clamp(2.2rem, 4vw, 3.25rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: 0;
   color: #ffffff;
   margin-bottom: 1.5rem;
 }
@@ -395,7 +395,7 @@ onUnmounted(() => {
 .dynamic-highlight {
   color: var(--gold-light);
   text-shadow: 0 0 28px var(--gold-glow);
-  font-weight: 750;
+  font-weight: 700;
 }
 
 .dynamic-caret {
@@ -643,7 +643,7 @@ onUnmounted(() => {
 
 .metric-val {
   font-size: 1.3rem;
-  font-weight: 800;
+  font-weight: 700;
   color: #ffffff;
   display: flex;
   align-items: baseline;
@@ -686,7 +686,7 @@ onUnmounted(() => {
 
 .step-badge {
   font-size: 0.72rem;
-  font-weight: 800;
+  font-weight: 700;
   width: 26px;
   height: 26px;
   border-radius: 8px;

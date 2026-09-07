@@ -98,7 +98,7 @@
         "./imports"
       ],
       "#app-manifest": [
-        "./manifest/meta/dev.json"
+        "./manifest/meta/98a593d9-7a60-44d1-92b3-ec71f22e409e.json"
       ],
       "#components": [
         "./components"
@@ -170,7 +170,6 @@
   ],
   "exclude": [
     "../node_modules",
-    "../../node_modules",
     "../node_modules/nuxt/node_modules",
     "../node_modules/@nuxt/devtools/node_modules",
     "../node_modules/@nuxt/telemetry/node_modules",

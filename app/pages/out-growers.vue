@@ -55,7 +55,7 @@ const schemeBenefits = [
         <div class="page-intro-inner">
           <span class="section-label">Farmer partnerships</span>
           <h1>Empowering Smallholder Farmers, <em>Transforming Rural Livelihoods</em></h1>
-          <p>Partnering with over 5,000 coffee families across Mount Elgon and the Rwenzori mountains to build sustainable prosperity from the roots up.</p>
+          <p>Partnering with over 5,000 coffee farming families growing Arabica and Natural Uganda Robusta (NUR) across Uganda — from Mount Elgon and the Rwenzori mountains to the Lake Victoria basin — to build sustainable prosperity from the roots up.</p>
         </div>
       </div>
     </section>
@@ -89,7 +89,7 @@ const schemeBenefits = [
               Smallholder farmers are the beating heart of Uganda's coffee industry. However, volatile cherry prices, predatory middlemen, and climate shocks have historically left families vulnerable.
             </p>
             <p style="margin-bottom: 1.25rem;">
-              The AFRICOFF Out-Growers Scheme solves this by creating direct, enduring partnerships. We provide smallholders with the technical agronomy knowledge, certified nursery stock, and pre-harvest financial stability required to produce Grade A cherries.
+              The AFRICOFF Out-Growers Scheme solves this by creating direct, enduring partnerships with smallholders growing both Arabica and Natural Uganda Robusta (NUR) across Uganda. We provide them with the technical agronomy knowledge, certified nursery stock, and pre-harvest financial stability required to produce Grade A cherries.
             </p>
             <p style="margin-bottom: 2rem;">
               When our farmers thrive, bean quality soars, creating a virtuous cycle of shared value from Ugandan soils to international roasters.
@@ -190,8 +190,8 @@ const schemeBenefits = [
   background: #ffffff;
   border-radius: 18px;
   padding: 2.5rem 2rem;
-  border: 1px solid var(--line);
-  box-shadow: 0 4px 20px rgba(26, 61, 43, 0.04);
+  border: var(--card-border);
+  box-shadow: var(--shadow-green);
   transition: var(--transition);
 }
 

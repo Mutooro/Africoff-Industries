@@ -44,7 +44,7 @@ useSeoMeta({
 
             <h3>4. Data Sharing & Third Parties</h3>
             <p>
-              AFRICOFF does not sell, rent, or monetize personal information. Data is shared only with certified regulatory entities (such as the Uganda Coffee Development Authority and EU Information System) and authorized logistics providers solely for freight fulfillment and phytosanitary verification.
+              AFRICOFF does not sell, rent, or monetize personal information. Data is shared only with certified regulatory entities (such as the Coffee Department of the Ministry of Agriculture, Animal Industry and Fisheries and the EU Information System) and authorized logistics providers solely for freight fulfillment and phytosanitary verification.
             </p>
 
             <h3>5. Security & Retention</h3>

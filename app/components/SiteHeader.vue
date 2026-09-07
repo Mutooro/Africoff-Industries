@@ -76,6 +76,8 @@ onUnmounted(() => {
           <a href="mailto:info@africoffindustries.com" class="top-link"><Mail :size="13" :stroke-width="2.5" /> info@africoffindustries.com</a>
           <span class="top-divider">|</span>
           <a href="tel:+256784851072" class="top-link"><Phone :size="13" :stroke-width="2.5" /> +256 784 851 072</a>
+          <span class="top-divider">|</span>
+          <a href="tel:+256392964836" class="top-link"><Phone :size="13" :stroke-width="2.5" /> +256 392 964836</a>
         </div>
       </div>
     </div>
@@ -222,7 +224,7 @@ onUnmounted(() => {
 
 /* Main Navbar */
 .navbar {
-  background: rgba(26, 61, 43, 0.95);
+  background: rgba(27, 94, 32, 0.95);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(201, 168, 76, 0.18);
@@ -231,7 +233,7 @@ onUnmounted(() => {
 }
 
 .is-scrolled .navbar {
-  background: rgba(15, 39, 27, 0.98);
+  background: rgba(27, 94, 32, 0.97);
   padding: 0.65rem 0;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 }
@@ -244,7 +246,7 @@ onUnmounted(() => {
 }
 
 .nav-logo img {
-  height: 48px;
+  height: 60px;
   width: auto;
   object-fit: contain;
 }
@@ -420,7 +422,7 @@ onUnmounted(() => {
     gap: 1rem;
   }
   .nav-logo img {
-    height: 40px;
+    height: 48px;
   }
   .nav-toggle {
     padding: 0.65rem 0.5rem; /* larger tap target */

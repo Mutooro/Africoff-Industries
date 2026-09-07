@@ -25,4 +25,12 @@ dist-ssr
 
 .vercel
 .env*
-.vercel
+
+# Nuxt build/dev artifacts
+.nuxt
+.output
+.data
+.nitro
+.cache
+dist
+

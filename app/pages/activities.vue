@@ -257,7 +257,7 @@ useSeoMeta({
   letter-spacing: 0.12em;
   font-weight: 700;
   color: var(--leaf);
-  background: rgba(45, 106, 79, 0.1);
+  background: rgba(76, 175, 80, 0.14);
   padding: 0.3rem 0.75rem;
   border-radius: 100px;
 }

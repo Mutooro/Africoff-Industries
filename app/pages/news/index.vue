@@ -51,7 +51,7 @@ useSeoMeta({
   text-align: center;
   padding: 4rem 2rem;
   background: #ffffff;
-  border: 1px solid var(--line);
+  border: var(--card-border);
   border-radius: 16px;
 }
 

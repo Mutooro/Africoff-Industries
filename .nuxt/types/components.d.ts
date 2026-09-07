@@ -16,12 +16,9 @@ type LazyComponent<T> = DefineComponent<HydrationStrategies, {}, {}, {}, {}, {},
 interface _GlobalComponents {
   CallToAction: typeof import("../../app/components/CallToAction.vue")['default']
   FaqSection: typeof import("../../app/components/FaqSection.vue")['default']
-  HeroTypewriter: typeof import("../../app/components/HeroTypewriter.vue")['default']
   HomeHero: typeof import("../../app/components/HomeHero.vue")['default']
   ObjectivesSection: typeof import("../../app/components/ObjectivesSection.vue")['default']
-  PageHero: typeof import("../../app/components/PageHero.vue")['default']
   ProjectsShowcase: typeof import("../../app/components/ProjectsShowcase.vue")['default']
-  QuantaBizHero: typeof import("../../app/components/QuantaBizHero.vue")['default']
   SafeImage: typeof import("../../app/components/SafeImage.vue")['default']
   ServicesGrid: typeof import("../../app/components/ServicesGrid.vue")['default']
   SiteFooter: typeof import("../../app/components/SiteFooter.vue")['default']
@@ -53,12 +50,9 @@ interface _GlobalComponents {
   NuxtIsland: typeof import("../../node_modules/nuxt/dist/app/components/nuxt-island")['default']
   LazyCallToAction: LazyComponent<typeof import("../../app/components/CallToAction.vue")['default']>
   LazyFaqSection: LazyComponent<typeof import("../../app/components/FaqSection.vue")['default']>
-  LazyHeroTypewriter: LazyComponent<typeof import("../../app/components/HeroTypewriter.vue")['default']>
   LazyHomeHero: LazyComponent<typeof import("../../app/components/HomeHero.vue")['default']>
   LazyObjectivesSection: LazyComponent<typeof import("../../app/components/ObjectivesSection.vue")['default']>
-  LazyPageHero: LazyComponent<typeof import("../../app/components/PageHero.vue")['default']>
   LazyProjectsShowcase: LazyComponent<typeof import("../../app/components/ProjectsShowcase.vue")['default']>
-  LazyQuantaBizHero: LazyComponent<typeof import("../../app/components/QuantaBizHero.vue")['default']>
   LazySafeImage: LazyComponent<typeof import("../../app/components/SafeImage.vue")['default']>
   LazyServicesGrid: LazyComponent<typeof import("../../app/components/ServicesGrid.vue")['default']>
   LazySiteFooter: LazyComponent<typeof import("../../app/components/SiteFooter.vue")['default']>

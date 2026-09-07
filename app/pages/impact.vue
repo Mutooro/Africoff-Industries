@@ -177,8 +177,8 @@ useSeoMeta({
 }
 
 .impact-stat-pill {
-  background: rgba(45, 106, 79, 0.08);
-  border: 1px solid rgba(45, 106, 79, 0.2);
+  background: rgba(76, 175, 80, 0.12);
+  border: 1px solid rgba(56, 142, 60, 0.25);
   color: var(--forest);
   padding: 0.65rem 1rem;
   border-radius: 10px;
@@ -201,8 +201,8 @@ useSeoMeta({
   background: #ffffff;
   border-radius: 18px;
   padding: 2.5rem 2rem;
-  border: 1px solid var(--line);
-  box-shadow: var(--card-shadow);
+  border: var(--card-border);
+  box-shadow: var(--shadow-green);
   transition: var(--transition);
 }
 

@@ -1,15 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --primary: #74a12e;
-  --primary-light: #9bc55b;
-  --primary-dark: #4a6d1e;
-  --forest: #4a6d1e;
-  --forest-dark: #0b221a;
-  --forest-light: #74a12e;
-  --leaf: #74a12e;
-  --sage: #9bc55b;
-  --sage-light: #9bc55b;
+  --primary: #4caf50;
+  --primary-light: #81c784;
+  --primary-dark: #388e3c;
+  --forest: #388e3c;
+  --forest-dark: #1b5e20;
+  --forest-light: #66bb6a;
+  --leaf: #4caf50;
+  --sage: #81c784;
+  --sage-light: #a5d6a7;
   --gold: #d4af37;
   --gold-light: #e5c76b;
   --gold-soft: #fff9e6;
@@ -21,12 +21,15 @@
   --background-green: #edf3ea;
   --charcoal: #1a1a1a;
   --muted: #6b6b6b;
-  --line: rgba(74, 109, 30, 0.16);
+  --line: rgba(56, 142, 60, 0.18);
   --line-light: rgba(255, 255, 255, 0.15);
   --card-shadow: 0 10px 30px -10px rgba(11, 34, 26, 0.1);
   --card-shadow-hover: 0 20px 40px -15px rgba(11, 34, 26, 0.2);
+  --card-border: 1.5px solid rgba(56, 142, 60, 0.32);
+  --card-border-strong: 2px solid var(--forest);
+  --shadow-green: 0 10px 30px rgba(56, 142, 60, 0.14);
   --heading-font: 'Playfair Display', Georgia, serif;
-  --body-font: 'Inter', system-ui, sans-serif;
+  --body-font: 'DM Sans', system-ui, sans-serif;
   --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -72,19 +75,19 @@ img {
   height: auto;
 }
 
-/* Typography */
+/* Typography — mirrored from ngitespace.com (Playfair Display 700 headings, DM Sans body) */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--heading-font);
-  line-height: 1.15;
-  font-weight: 800;
+  line-height: 1.18;
+  font-weight: 700;
   color: var(--charcoal);
   letter-spacing: 0;
 }
 
-h1 { font-size: clamp(2rem, 4vw, 3.25rem); }
-h2 { font-size: clamp(1.9rem, 3.2vw, 2.8rem); }
-h3 { font-size: clamp(1.3rem, 2vw, 1.65rem); }
-h4 { font-size: 1.15rem; }
+h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); line-height: 1.25; }
+h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); font-weight: 600; }
+h4 { font-size: 1.1rem; font-weight: 600; }
 
 h1 em, h2 em, h3 em {
   font-style: italic;
@@ -124,10 +127,10 @@ p {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  font-size: 0.78rem;
-  font-weight: 700;
+  font-size: 0.85rem;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.06em;
   color: var(--leaf);
   margin-bottom: 1rem;
 }
@@ -183,7 +186,7 @@ p {
 }
 
 .page-intro {
-  background: linear-gradient(180deg, rgba(15, 39, 27, 0.98), rgba(15, 39, 27, 0.94));
+  background: linear-gradient(180deg, rgba(27, 94, 32, 0.97), rgba(27, 94, 32, 0.93));
   border-bottom: 1px solid rgba(201, 168, 76, 0.26);
   padding: 4.25rem 0 3.5rem;
 }
@@ -214,14 +217,14 @@ p {
 
 /* Section Spacing */
 .py-section {
-  padding: 6.5rem 0;
+  padding: 5rem 0;
 }
 .py-section-lg {
-  padding: 8.5rem 0;
+  padding: 7rem 0;
 }
 @media (max-width: 768px) {
-  .py-section { padding: 4.5rem 0; }
-  .py-section-lg { padding: 5.5rem 0; }
+  .py-section { padding: 3.5rem 0; }
+  .py-section-lg { padding: 4.5rem 0; }
 }
 
 .bg-cream {
@@ -360,7 +363,7 @@ p {
   font-weight: 700;
   font-size: 0.95rem;
   color: var(--forest);
-  border-bottom: 2px solid rgba(45, 106, 79, 0.3);
+  border-bottom: 2px solid rgba(56, 142, 60, 0.35);
   padding-bottom: 0.25rem;
   transition: var(--transition);
 }
@@ -391,7 +394,7 @@ p {
   display: inline-flex;
   align-items: center;
   gap: 0.65rem;
-  background: rgba(26, 61, 43, 0.65);
+  background: rgba(27, 94, 32, 0.75);
   border: 1px solid rgba(201, 168, 76, 0.4);
   padding: 0.5rem 1.15rem;
   border-radius: 100px;
@@ -426,8 +429,8 @@ p {
   gap: 0.5rem;
   padding: 0.45rem 0.95rem;
   border-radius: 100px;
-  background: rgba(45, 106, 79, 0.08);
-  border: 1px solid rgba(45, 106, 79, 0.18);
+  background: rgba(56, 142, 60, 0.1);
+  border: 1px solid rgba(56, 142, 60, 0.2);
   color: var(--forest);
   font-size: 0.84rem;
   font-weight: 600;
@@ -437,6 +440,40 @@ p {
   background: rgba(201, 168, 76, 0.12);
   border-color: rgba(201, 168, 76, 0.35);
   color: #7d5e16;
+}
+
+/* Values & Listing Cards — shared by About, News and Programs listings.
+   QuantaBiz-style: white cards with visible green borders. */
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.75rem;
+}
+
+.val-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2.2rem 1.8rem;
+  border: var(--card-border);
+  box-shadow: var(--shadow-green);
+  transition: var(--transition);
+}
+
+.val-card:hover {
+  border-color: var(--forest);
+  transform: translateY(-3px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.val-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.65rem;
+}
+
+.val-card p {
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.6;
 }
 
 /* Stats Bar */
@@ -590,17 +627,17 @@ p {
 }
 
 .filter-btn.active {
-  background: var(--forest);
-  color: #ffffff;
-  border-color: var(--forest);
-  box-shadow: 0 4px 15px rgba(26, 61, 43, 0.2);
+  background: #ffffff;
+  color: var(--forest);
+  border: 2px solid var(--forest);
+  box-shadow: var(--shadow-green);
 }
 
 .services-grid {
   display: grid;
   /* min() keeps the column from exceeding the viewport on small phones */
-  grid-template-columns: repeat(auto-fill, minmax(min(350px, 100%), 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
 }
 
 .service-card-wrap {
@@ -638,8 +675,8 @@ p {
 
 .card-front {
   background: #ffffff;
-  border: 1px solid rgba(26, 61, 43, 0.08);
-  box-shadow: var(--card-shadow);
+  border: var(--card-border);
+  box-shadow: var(--shadow-green);
   justify-content: space-between;
 }
 
@@ -694,11 +731,11 @@ p {
 }
 
 .card-back {
-  background: linear-gradient(145deg, var(--forest), var(--forest-dark));
-  color: #ffffff;
+  background: var(--forest);
+  color: rgba(255, 255, 255, 0.9);
   transform: rotateY(180deg);
-  border: 1px solid rgba(201, 168, 76, 0.3);
-  box-shadow: 0 15px 35px rgba(15, 39, 27, 0.4);
+  border: var(--card-border-strong);
+  box-shadow: var(--shadow-green);
   justify-content: space-between;
 }
 
@@ -721,7 +758,7 @@ p {
   align-items: flex-start;
   gap: 0.65rem;
   font-size: 0.92rem;
-  color: rgba(255, 255, 255, 0.88);
+  color: rgba(255, 255, 255, 0.82);
   line-height: 1.45;
 }
 
@@ -731,7 +768,7 @@ p {
   width: 15px;
   height: 15px;
   margin-top: 2px;
-  background-color: var(--gold-light);
+  background-color: var(--gold);
   -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") no-repeat center / contain;
   mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") no-repeat center / contain;
 }
@@ -778,7 +815,7 @@ p {
 .project-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(26, 61, 43, 0.1) 0%, rgba(15, 39, 27, 0.85) 60%, rgba(15, 39, 27, 0.96) 100%);
+  background: linear-gradient(180deg, rgba(27, 94, 32, 0.1) 0%, rgba(27, 94, 32, 0.85) 60%, rgba(27, 94, 32, 0.96) 100%);
   z-index: 2;
 }
 
@@ -799,7 +836,7 @@ p {
 }
 
 .project-tag {
-  background: rgba(26, 61, 43, 0.75);
+  background: rgba(27, 94, 32, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: var(--gold-light);
   font-size: 0.75rem;
@@ -867,8 +904,8 @@ p {
   background: #ffffff;
   padding: 1.8rem;
   border-radius: 16px;
-  border: 1px solid var(--line);
-  box-shadow: 0 4px 20px rgba(26, 61, 43, 0.04);
+  border: var(--card-border);
+  box-shadow: var(--shadow-green);
   transition: var(--transition);
 }
 
@@ -921,18 +958,19 @@ p {
 }
 
 .faq-image-caption {
-  background: var(--forest);
-  color: #ffffff;
+  background: #ffffff;
+  color: var(--charcoal);
+  border: var(--card-border);
   padding: 1.5rem;
 }
 
 .faq-image-caption h4 {
-  color: var(--gold-light);
+  color: var(--gold-hover);
   margin-bottom: 0.35rem;
 }
 
 .faq-image-caption p {
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--muted);
   font-size: 0.9rem;
 }
 
@@ -945,7 +983,7 @@ p {
 .accordion-item {
   background: #ffffff;
   border-radius: 16px;
-  border: 1px solid var(--line);
+  border: var(--card-border);
   overflow: hidden;
   transition: var(--transition);
 }
@@ -967,8 +1005,8 @@ p {
 
 .accordion-head h4 {
   font-size: 1.1rem;
-  font-family: var(--body-font);
-  font-weight: 700;
+  font-family: var(--heading-font);
+  font-weight: 600;
   color: var(--forest);
   margin: 0;
 }
@@ -989,8 +1027,8 @@ p {
 
 .accordion-item.active .accordion-icon {
   transform: rotate(180deg);
-  background: var(--forest);
-  color: #ffffff;
+  background: rgba(76, 175, 80, 0.12);
+  color: var(--forest);
 }
 
 .accordion-body {
@@ -1002,35 +1040,11 @@ p {
 
 /* Call To Action Banner */
 .cta-banner {
-  background: linear-gradient(135deg, var(--forest-dark) 0%, var(--forest) 50%, #15452d 100%);
+  background: var(--forest-dark);
   color: #ffffff;
   padding: 6.5rem 0;
   position: relative;
   overflow: hidden;
-}
-
-.cta-banner::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  right: -20%;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(201, 168, 76, 0.15) 0%, transparent 70%);
-  border-radius: 50%;
-  pointer-events: none;
-}
-
-.cta-banner::after {
-  content: '';
-  position: absolute;
-  bottom: -30%;
-  left: -10%;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(82, 183, 136, 0.12) 0%, transparent 70%);
-  border-radius: 50%;
-  pointer-events: none;
 }
 
 .cta-inner {
@@ -1062,6 +1076,9 @@ p {
 
 /* Responsive Breakpoints */
 @media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
   .about-grid, .objectives-grid, .faq-grid {
     grid-template-columns: 1fr;
     gap: 3.5rem;

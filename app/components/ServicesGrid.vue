@@ -36,9 +36,9 @@ function toggleCard(id: string) {
     <div class="shell">
       <div class="center-text" style="margin-bottom: 2.5rem;">
         <span class="section-label">Integrated Agro-Processing</span>
-        <h2 class="section-title">
+        <h3 class="section-title">
           Excellence Across Every Node of the <em>Coffee Value Chain</em>
-        </h2>
+        </h3>
         <p class="section-subtitle">
           From high-altitude shade farming and precision eco-milling to digital EUDR traceability and direct trade logistics.
         </p>
@@ -88,8 +88,8 @@ function toggleCard(id: string) {
             <div class="card-back">
               <div>
                 <div class="card-front-top">
-                  <span class="service-number" style="color: var(--gold-light);">{{ activity.number }}</span>
-                  <div class="service-icon-box" style="background: rgba(255, 255, 255, 0.12); color: #fff;">
+                  <span class="service-number" style="color: var(--gold);">{{ activity.number }}</span>
+                  <div class="service-icon-box" style="background: var(--cream); color: var(--forest);">
                     <component :is="activity.icon" :size="26" :stroke-width="2" />
                   </div>
                 </div>

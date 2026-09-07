@@ -17,9 +17,9 @@ const filteredProjects = computed(() => {
     <div class="shell">
       <div class="center-text" style="margin-bottom: 2.5rem;">
         <span class="section-label">Proven Impact & Initiatives</span>
-        <h2 class="section-title">
+        <h3 class="section-title">
           Transforming Uganda’s Coffee Landscape <em>Through Action</em>
-        </h2>
+        </h3>
         <p class="section-subtitle">
           Explore our strategic field programs elevating bean quality, empowering female farmers, and safeguarding biodiversity.
         </p>

@@ -5,7 +5,7 @@ import { Coffee, ArrowUpRight, Package, Ship, Plane } from '@lucide/vue'
 
 useSeoMeta({
   title: 'Specialty Coffee Offerings and Green Bean Grades · AFRICOFF Industries',
-  description: 'Explore AFRICOFF’s premium Ugandan green coffee catalogue: Bugisu Washed Arabica AA/AB, Natural Drugar, Screen 18 Washed Robusta, and artisanal roasted selections.',
+  description: 'Explore AFRICOFF’s premium Ugandan green coffee catalogue: Bugisu Washed Arabica AA/AB, Natural Drugar, Natural Uganda Robusta (NUR) Screens 12, 15 & 18, and artisanal roasted selections.',
 })
 
 const activeFilter = ref<'All' | 'Arabica' | 'Robusta' | 'Value-Added'>('All')
@@ -37,7 +37,7 @@ const filteredProducts = computed(() => {
             Exceptional Terroirs, <em>Distinct Sensory Profiles</em>
           </h2>
           <p class="section-subtitle">
-            All lots are certified by the Uganda Coffee Development Authority (UCDA), defect-sorted, and available in GrainPro lined 60kg jute bags.
+            All lots are certified by the Coffee Department of the Ministry of Agriculture, Animal Industry and Fisheries (MAAIF), defect-sorted, and available in GrainPro lined 60kg jute bags.
           </p>
         </div>
 
@@ -234,7 +234,7 @@ const filteredProducts = computed(() => {
 }
 
 .prod-type-pill {
-  background: rgba(45, 106, 79, 0.1);
+  background: rgba(76, 175, 80, 0.14);
   color: var(--forest);
   font-size: 0.75rem;
   font-weight: 700;

@@ -9,9 +9,9 @@ import { ArrowRight } from '@lucide/vue'
       <div class="objectives-grid">
         <div>
           <span class="section-label">Strategic Roadmap</span>
-          <h2 class="section-title">
+          <h3 class="section-title">
             Our Commitment to a Resilient, <em>Inclusive Coffee Economy</em>
-          </h2>
+          </h3>
           <p class="lead" style="margin-bottom: 1.5rem;">
             AFRICOFF operates on foundational pillars that unite commercial viability with social justice and ecological protection across Uganda.
           </p>
