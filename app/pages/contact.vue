@@ -355,7 +355,8 @@ async function submitForm() {
   border: 1.5px solid rgba(26, 61, 43, 0.15);
   border-radius: 10px;
   padding: 0.85rem 1.1rem;
-  font-size: 0.95rem;
+  /* 16px minimum prevents iOS Safari auto-zoom on focus */
+  font-size: 1rem;
   color: var(--charcoal);
   font-family: var(--body-font);
   transition: var(--transition);

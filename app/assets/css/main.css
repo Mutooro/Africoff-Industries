@@ -598,7 +598,8 @@ p {
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  /* min() keeps the column from exceeding the viewport on small phones */
+  grid-template-columns: repeat(auto-fill, minmax(min(350px, 100%), 1fr));
   gap: 2rem;
 }
 
@@ -742,7 +743,8 @@ p {
 /* Projects / Impact Showcase */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  /* min() keeps the column from exceeding the viewport on small phones */
+  grid-template-columns: repeat(auto-fill, minmax(min(350px, 100%), 1fr));
   gap: 2.2rem;
 }
 
@@ -1098,6 +1100,9 @@ p {
   .stats-grid {
     grid-template-columns: 1fr;
   }
+  .cta-banner {
+    padding: 4.5rem 0;
+  }
   .cta-actions {
     flex-direction: column;
     width: 100%;
@@ -1105,5 +1110,47 @@ p {
   .cta-actions .btn-gold,
   .cta-actions .btn-outline {
     width: 100%;
+  }
+}
+
+/* Mobile & Touch UX */
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Keep anchor targets clear of the sticky header when jumped to */
+section[id],
+div[id] {
+  scroll-margin-top: 6.5rem;
+}
+
+/* Prevent accidental text selection / context menus on interactive cards */
+.service-card-wrap,
+.project-card,
+.accordion-head {
+  -webkit-touch-callout: none;
+}
+
+@media (hover: none) {
+  /* Disable hover-only transforms that stick on touch devices */
+  .btn-primary:hover,
+  .btn-gold:hover,
+  .btn-outline:hover,
+  .btn-outline-dark:hover,
+  .project-card:hover img {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

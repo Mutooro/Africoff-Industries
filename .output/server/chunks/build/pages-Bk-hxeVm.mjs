@@ -179,7 +179,7 @@ var ServicesGrid_vue_vue_type_script_setup_true_lang_default = /*@__PURE__*/ def
 					size: 26,
 					"stroke-width": 2
 				}, null), _parent);
-				_push(`</div></div><h3>${ssrInterpolate(activity.title)}</h3><p>${ssrInterpolate(activity.shortDesc)}</p></div><div class="card-hint"><span>Click / Hover to explore specs</span>`);
+				_push(`</div></div><h3>${ssrInterpolate(activity.title)}</h3><p>${ssrInterpolate(activity.shortDesc)}</p></div><div class="card-hint"><span>Tap or click to explore specs</span>`);
 				_push(ssrRenderComponent(unref(RefreshCw), {
 					size: 14,
 					"stroke-width": 2.5
@@ -446,4 +446,4 @@ index_vue_vue_type_script_setup_true_lang_default.setup = (props, ctx) => {
 var pages_default = /*#__PURE__*/ _plugin_vue_export_helper_default(index_vue_vue_type_script_setup_true_lang_default, [["__scopeId", "data-v-19b7ffef"]]);
 
 export { pages_default as default };
-//# sourceMappingURL=pages-D_KIHlTW.mjs.map
+//# sourceMappingURL=pages-Bk-hxeVm.mjs.map

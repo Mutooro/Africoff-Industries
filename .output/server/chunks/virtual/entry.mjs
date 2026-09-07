@@ -1004,7 +1004,7 @@ var virtual_nuxt_node_modules_2F_cache_2Fnuxt_2F_nuxt_2Froutes_default = [
 	{
 		name: "contact",
 		path: "/contact",
-		component: () => import('../build/contact-BpFmjrjV.mjs')
+		component: () => import('../build/contact-CXqVBZ4O.mjs')
 	},
 	{
 		name: "impact",
@@ -1044,7 +1044,7 @@ var virtual_nuxt_node_modules_2F_cache_2Fnuxt_2F_nuxt_2Froutes_default = [
 	{
 		name: "index",
 		path: "/",
-		component: () => import('../build/pages-D_KIHlTW.mjs')
+		component: () => import('../build/pages-Bk-hxeVm.mjs')
 	}
 ];
 //#endregion
@@ -1299,7 +1299,7 @@ function resolveLayoutName(route, name) {
 }
 //#endregion
 //#region virtual:nuxt:node_modules%2F.cache%2Fnuxt%2F.nuxt%2Flayouts.mjs
-var virtual_nuxt_node_modules_2F_cache_2Fnuxt_2F_nuxt_2Flayouts_default = { default: defineAsyncComponent(() => import('../build/default-BcC4Oo-l.mjs').then((m) => m.default || m)) };
+var virtual_nuxt_node_modules_2F_cache_2Fnuxt_2F_nuxt_2Flayouts_default = { default: defineAsyncComponent(() => import('../build/default-aCdXesmS.mjs').then((m) => m.default || m)) };
 //#endregion
 //#region node_modules/nuxt/dist/app/components/nuxt-layout.js
 var LayoutLoader = defineComponent({

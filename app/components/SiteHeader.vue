@@ -1,6 +1,8 @@
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, watch, onMounted, onUnmounted } from 'vue'
 import { MapPin, Leaf, Mail, Phone, ArrowUpRight } from '@lucide/vue'
+
+const route = useRoute()
 
 const isScrolled = ref(false)
 const isMobileMenuOpen = ref(false)
@@ -29,13 +31,35 @@ function closeMobileMenu() {
   isMobileMenuOpen.value = false
 }
 
+function handleKeydown(event: KeyboardEvent) {
+  if (event.key === 'Escape') closeMobileMenu()
+}
+
+function handleResize() {
+  if (window.innerWidth > 980) closeMobileMenu()
+}
+
+function setBodyScrollLock(locked: boolean) {
+  document.body.style.overflow = locked ? 'hidden' : ''
+}
+
+watch(isMobileMenuOpen, (open) => setBodyScrollLock(open))
+
+// Close the drawer on any navigation (covers browser back/forward too)
+watch(() => route.fullPath, () => closeMobileMenu())
+
 onMounted(() => {
   window.addEventListener('scroll', handleScroll, { passive: true })
+  window.addEventListener('keydown', handleKeydown)
+  window.addEventListener('resize', handleResize, { passive: true })
   handleScroll()
 })
 
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
+  window.removeEventListener('keydown', handleKeydown)
+  window.removeEventListener('resize', handleResize)
+  setBodyScrollLock(false)
 })
 </script>
 
@@ -88,7 +112,9 @@ onUnmounted(() => {
         <button
           class="nav-toggle"
           :class="{ 'is-active': isMobileMenuOpen }"
-          aria-label="Toggle Navigation Menu"
+          :aria-expanded="isMobileMenuOpen"
+          aria-controls="mobile-drawer-menu"
+          :aria-label="isMobileMenuOpen ? 'Close Navigation Menu' : 'Open Navigation Menu'"
           @click="toggleMobileMenu"
         >
           <span />
@@ -98,8 +124,23 @@ onUnmounted(() => {
       </div>
     </div>
 
+    <!-- Backdrop (tap outside to close) -->
+    <div
+      class="drawer-backdrop"
+      :class="{ 'is-open': isMobileMenuOpen }"
+      aria-hidden="true"
+      @click="closeMobileMenu"
+    />
+
     <!-- Mobile Drawer Menu -->
-    <div class="mobile-drawer" :class="{ 'is-open': isMobileMenuOpen }">
+    <div
+      id="mobile-drawer-menu"
+      class="mobile-drawer"
+      :class="{ 'is-open': isMobileMenuOpen }"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Mobile navigation"
+    >
       <div class="mobile-drawer-inner">
         <nav class="mobile-nav">
           <NuxtLink
@@ -281,19 +322,37 @@ onUnmounted(() => {
   background-color: var(--gold-light);
 }
 
+/* Backdrop overlay behind the mobile drawer */
+.drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(6, 18, 12, 0.6);
+  backdrop-filter: blur(3px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+  z-index: 98; /* below the drawer (99) and the header bar (100) */
+}
+
+.drawer-backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
 /* Mobile Drawer */
 .mobile-drawer {
   position: fixed;
   top: 0;
   right: -100%;
-  width: 85%;
-  max-width: 360px;
+  width: min(85%, 360px);
   height: 100vh;
+  height: 100dvh; /* correct height on iOS Safari with dynamic address bar */
   background: var(--forest-dark);
   box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
   z-index: 99;
   transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   overflow-y: auto;
+  overscroll-behavior: contain;
 }
 
 .mobile-drawer.is-open {
@@ -301,7 +360,7 @@ onUnmounted(() => {
 }
 
 .mobile-drawer-inner {
-  padding: 5.5rem 2rem 2.5rem;
+  padding: 5.5rem 2rem calc(2.5rem + env(safe-area-inset-bottom, 0px));
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -311,14 +370,15 @@ onUnmounted(() => {
 .mobile-nav {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 0.5rem;
 }
 
+/* Comfortable ~48px touch targets on mobile */
 .mobile-nav-link {
   font-size: 1.15rem;
   font-weight: 600;
   color: #ffffff;
-  padding-bottom: 0.5rem;
+  padding: 0.85rem 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -355,6 +415,23 @@ onUnmounted(() => {
 @media (max-width: 600px) {
   .top-bar {
     display: none;
+  }
+  .navbar-inner {
+    gap: 1rem;
+  }
+  .nav-logo img {
+    height: 40px;
+  }
+  .nav-toggle {
+    padding: 0.65rem 0.5rem; /* larger tap target */
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mobile-drawer,
+  .drawer-backdrop,
+  .nav-toggle span {
+    transition: none;
   }
 }
 </style>

@@ -79,7 +79,7 @@ function toggleCard(id: string) {
                 <p>{{ activity.shortDesc }}</p>
               </div>
               <div class="card-hint">
-                <span>Click / Hover to explore specs</span>
+                <span>Tap or click to explore specs</span>
                 <RefreshCw :size="14" :stroke-width="2.5" />
               </div>
             </div>

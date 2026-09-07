@@ -1,10 +1,10 @@
+import { u as useRoute$2 } from '../virtual/entry.mjs';
 import { N as NuxtLink } from './nuxt-link-WAb99hsX.mjs';
 import { _ as _plugin_vue_export_helper_default } from './_plugin-vue_export-helper-BOaGB7Aw.mjs';
-import { defineComponent, ref, mergeProps, unref, withCtx, createVNode, createTextVNode, toDisplayString, useSSRContext } from 'vue';
+import { defineComponent, ref, watch, mergeProps, unref, withCtx, createVNode, createTextVNode, toDisplayString, useSSRContext } from 'vue';
 import { p as publicAssetsURL } from '../routes/renderer.mjs';
 import { ssrRenderAttrs, ssrRenderComponent, ssrRenderSlot, ssrRenderAttr, ssrRenderList, ssrInterpolate, ssrRenderClass } from 'vue/server-renderer';
 import { MapPin, Leaf, Mail, Phone, ArrowUpRight, Flag, Briefcase, AtSign, ThumbsUp, Camera, MessageCircle, QrCode, Check } from '@lucide/vue';
-import '../virtual/entry.mjs';
 import 'nostics';
 import 'nostics/formatters/ansi';
 import '../_/nitro.mjs';
@@ -32,6 +32,7 @@ var SiteHeader_vue_vue_type_script_setup_true_lang_default = /*@__PURE__*/ defin
 	__name: "SiteHeader",
 	__ssrInlineRender: true,
 	setup(__props) {
+		const route = useRoute$2();
 		const isScrolled = ref(false);
 		const isMobileMenuOpen = ref(false);
 		const navLinks = [
@@ -75,36 +76,41 @@ var SiteHeader_vue_vue_type_script_setup_true_lang_default = /*@__PURE__*/ defin
 		function closeMobileMenu() {
 			isMobileMenuOpen.value = false;
 		}
+		function setBodyScrollLock(locked) {
+			(void 0).body.style.overflow = locked ? "hidden" : "";
+		}
+		watch(isMobileMenuOpen, (open) => setBodyScrollLock(open));
+		watch(() => route.fullPath, () => closeMobileMenu());
 		return (_ctx, _push, _parent, _attrs) => {
 			const _component_NuxtLink = NuxtLink;
-			_push(`<header${ssrRenderAttrs(mergeProps({ class: ["header-container", { "is-scrolled": isScrolled.value }] }, _attrs))} data-v-b02768ec><div class="top-bar" data-v-b02768ec><div class="shell top-bar-inner" data-v-b02768ec><div class="top-bar-left" data-v-b02768ec><span class="top-badge" data-v-b02768ec>`);
+			_push(`<header${ssrRenderAttrs(mergeProps({ class: ["header-container", { "is-scrolled": isScrolled.value }] }, _attrs))} data-v-e1fd93d6><div class="top-bar" data-v-e1fd93d6><div class="shell top-bar-inner" data-v-e1fd93d6><div class="top-bar-left" data-v-e1fd93d6><span class="top-badge" data-v-e1fd93d6>`);
 			_push(ssrRenderComponent(unref(MapPin), {
 				size: 13,
 				"stroke-width": 2.5
 			}, null, _parent));
-			_push(` Kampala, Uganda</span><span class="top-compliance" data-v-b02768ec>`);
+			_push(` Kampala, Uganda</span><span class="top-compliance" data-v-e1fd93d6>`);
 			_push(ssrRenderComponent(unref(Leaf), {
 				size: 13,
 				"stroke-width": 2.5
 			}, null, _parent));
-			_push(` EUDR &amp; Traceability Compliant</span></div><div class="top-bar-right" data-v-b02768ec><a href="mailto:info@africoffindustries.com" class="top-link" data-v-b02768ec>`);
+			_push(` EUDR &amp; Traceability Compliant</span></div><div class="top-bar-right" data-v-e1fd93d6><a href="mailto:info@africoffindustries.com" class="top-link" data-v-e1fd93d6>`);
 			_push(ssrRenderComponent(unref(Mail), {
 				size: 13,
 				"stroke-width": 2.5
 			}, null, _parent));
-			_push(` info@africoffindustries.com</a><span class="top-divider" data-v-b02768ec>|</span><a href="tel:+256784851072" class="top-link" data-v-b02768ec>`);
+			_push(` info@africoffindustries.com</a><span class="top-divider" data-v-e1fd93d6>|</span><a href="tel:+256784851072" class="top-link" data-v-e1fd93d6>`);
 			_push(ssrRenderComponent(unref(Phone), {
 				size: 13,
 				"stroke-width": 2.5
 			}, null, _parent));
-			_push(` +256 784 851 072</a></div></div></div><div class="navbar" data-v-b02768ec><div class="shell navbar-inner" data-v-b02768ec>`);
+			_push(` +256 784 851 072</a></div></div></div><div class="navbar" data-v-e1fd93d6><div class="shell navbar-inner" data-v-e1fd93d6>`);
 			_push(ssrRenderComponent(_component_NuxtLink, {
 				to: "/",
 				class: "nav-logo",
 				onClick: closeMobileMenu
 			}, {
 				default: withCtx((_, _push, _parent, _scopeId) => {
-					if (_push) _push(`<img${ssrRenderAttr("src", _virtual_public__2Fafricoff_default)} alt="AFRICOFF Industries (U) Ltd" data-v-b02768ec${_scopeId}>`);
+					if (_push) _push(`<img${ssrRenderAttr("src", _virtual_public__2Fafricoff_default)} alt="AFRICOFF Industries (U) Ltd" data-v-e1fd93d6${_scopeId}>`);
 					else return [createVNode("img", {
 						src: _virtual_public__2Fafricoff_default,
 						alt: "AFRICOFF Industries (U) Ltd"
@@ -112,7 +118,7 @@ var SiteHeader_vue_vue_type_script_setup_true_lang_default = /*@__PURE__*/ defin
 				}),
 				_: 1
 			}, _parent));
-			_push(`<nav class="desktop-nav" data-v-b02768ec><!--[-->`);
+			_push(`<nav class="desktop-nav" data-v-e1fd93d6><!--[-->`);
 			ssrRenderList(navLinks, (link) => {
 				_push(ssrRenderComponent(_component_NuxtLink, {
 					key: link.path,
@@ -126,14 +132,14 @@ var SiteHeader_vue_vue_type_script_setup_true_lang_default = /*@__PURE__*/ defin
 					_: 2
 				}, _parent));
 			});
-			_push(`<!--]--></nav><div class="nav-cta-wrapper" data-v-b02768ec>`);
+			_push(`<!--]--></nav><div class="nav-cta-wrapper" data-v-e1fd93d6>`);
 			_push(ssrRenderComponent(_component_NuxtLink, {
 				to: "/contact",
 				class: "btn-gold btn-sm"
 			}, {
 				default: withCtx((_, _push, _parent, _scopeId) => {
 					if (_push) {
-						_push(`<span data-v-b02768ec${_scopeId}>Partner With Us</span>`);
+						_push(`<span data-v-e1fd93d6${_scopeId}>Partner With Us</span>`);
 						_push(ssrRenderComponent(unref(ArrowUpRight), {
 							class: "btn-icon",
 							size: 16,
@@ -147,7 +153,7 @@ var SiteHeader_vue_vue_type_script_setup_true_lang_default = /*@__PURE__*/ defin
 				}),
 				_: 1
 			}, _parent));
-			_push(`</div><button class="${ssrRenderClass([{ "is-active": isMobileMenuOpen.value }, "nav-toggle"])}" aria-label="Toggle Navigation Menu" data-v-b02768ec><span data-v-b02768ec></span><span data-v-b02768ec></span><span data-v-b02768ec></span></button></div></div><div class="${ssrRenderClass([{ "is-open": isMobileMenuOpen.value }, "mobile-drawer"])}" data-v-b02768ec><div class="mobile-drawer-inner" data-v-b02768ec><nav class="mobile-nav" data-v-b02768ec><!--[-->`);
+			_push(`</div><button class="${ssrRenderClass([{ "is-active": isMobileMenuOpen.value }, "nav-toggle"])}"${ssrRenderAttr("aria-expanded", isMobileMenuOpen.value)} aria-controls="mobile-drawer-menu"${ssrRenderAttr("aria-label", isMobileMenuOpen.value ? "Close Navigation Menu" : "Open Navigation Menu")} data-v-e1fd93d6><span data-v-e1fd93d6></span><span data-v-e1fd93d6></span><span data-v-e1fd93d6></span></button></div></div><div class="${ssrRenderClass([{ "is-open": isMobileMenuOpen.value }, "drawer-backdrop"])}" aria-hidden="true" data-v-e1fd93d6></div><div id="mobile-drawer-menu" class="${ssrRenderClass([{ "is-open": isMobileMenuOpen.value }, "mobile-drawer"])}" role="dialog" aria-modal="true" aria-label="Mobile navigation" data-v-e1fd93d6><div class="mobile-drawer-inner" data-v-e1fd93d6><nav class="mobile-nav" data-v-e1fd93d6><!--[-->`);
 			ssrRenderList(navLinks, (link) => {
 				_push(ssrRenderComponent(_component_NuxtLink, {
 					key: link.path,
@@ -162,7 +168,7 @@ var SiteHeader_vue_vue_type_script_setup_true_lang_default = /*@__PURE__*/ defin
 					_: 2
 				}, _parent));
 			});
-			_push(`<!--]--></nav><div class="mobile-drawer-footer" data-v-b02768ec>`);
+			_push(`<!--]--></nav><div class="mobile-drawer-footer" data-v-e1fd93d6>`);
 			_push(ssrRenderComponent(_component_NuxtLink, {
 				to: "/contact",
 				class: "btn-gold",
@@ -174,7 +180,7 @@ var SiteHeader_vue_vue_type_script_setup_true_lang_default = /*@__PURE__*/ defin
 			}, {
 				default: withCtx((_, _push, _parent, _scopeId) => {
 					if (_push) {
-						_push(`<span data-v-b02768ec${_scopeId}>Partner With Us</span>`);
+						_push(`<span data-v-e1fd93d6${_scopeId}>Partner With Us</span>`);
 						_push(ssrRenderComponent(unref(ArrowUpRight), {
 							class: "btn-icon",
 							size: 16,
@@ -188,7 +194,7 @@ var SiteHeader_vue_vue_type_script_setup_true_lang_default = /*@__PURE__*/ defin
 				}),
 				_: 1
 			}, _parent));
-			_push(`<div class="mobile-contact-info" data-v-b02768ec><p data-v-b02768ec><strong data-v-b02768ec>AFRICOFF Industries (U) Ltd</strong></p><p data-v-b02768ec>Kampala, Uganda</p><p data-v-b02768ec>info@africoffindustries.com</p></div></div></div></div></header>`);
+			_push(`<div class="mobile-contact-info" data-v-e1fd93d6><p data-v-e1fd93d6><strong data-v-e1fd93d6>AFRICOFF Industries (U) Ltd</strong></p><p data-v-e1fd93d6>Kampala, Uganda</p><p data-v-e1fd93d6>info@africoffindustries.com</p></div></div></div></div></header>`);
 		};
 	}
 });
@@ -200,7 +206,7 @@ SiteHeader_vue_vue_type_script_setup_true_lang_default.setup = (props, ctx) => {
 	(ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/SiteHeader.vue");
 	return _sfc_setup$2 ? _sfc_setup$2(props, ctx) : void 0;
 };
-var SiteHeader_default = /*#__PURE__*/ Object.assign(_plugin_vue_export_helper_default(SiteHeader_vue_vue_type_script_setup_true_lang_default, [["__scopeId", "data-v-b02768ec"]]), { __name: "SiteHeader" });
+var SiteHeader_default = /*#__PURE__*/ Object.assign(_plugin_vue_export_helper_default(SiteHeader_vue_vue_type_script_setup_true_lang_default, [["__scopeId", "data-v-e1fd93d6"]]), { __name: "SiteHeader" });
 //#endregion
 //#region app/components/SiteFooter.vue?vue&type=script&setup=true&lang.ts
 var SiteFooter_vue_vue_type_script_setup_true_lang_default = /*@__PURE__*/ defineComponent({
@@ -441,4 +447,4 @@ _sfc_main.setup = (props, ctx) => {
 var default_default = /*#__PURE__*/ _plugin_vue_export_helper_default(_sfc_main, [["ssrRender", _sfc_ssrRender]]);
 
 export { default_default as default };
-//# sourceMappingURL=default-BcC4Oo-l.mjs.map
+//# sourceMappingURL=default-aCdXesmS.mjs.map
