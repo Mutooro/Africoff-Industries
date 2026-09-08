@@ -353,7 +353,7 @@ async function submitForm() {
 
 .custom-input {
   background: var(--offwhite);
-  border: 1.5px solid rgba(56, 142, 60, 0.22);
+  border: 1.5px solid var(--parchment-border);
   border-radius: 10px;
   padding: 0.85rem 1.1rem;
   /* 16px minimum prevents iOS Safari auto-zoom on focus */
@@ -367,11 +367,11 @@ async function submitForm() {
 .custom-input:focus {
   border-color: var(--leaf);
   background: #ffffff;
-  box-shadow: 0 0 0 3px rgba(56, 142, 60, 0.18);
+  box-shadow: 0 0 0 3px rgba(212, 163, 56, 0.25);
 }
 
 .form-success-banner {
-  background: rgba(82, 183, 136, 0.12);
+  background: rgba(21, 128, 61, 0.08);
   border: 1.5px solid var(--sage);
   border-radius: 16px;
   padding: 2rem;

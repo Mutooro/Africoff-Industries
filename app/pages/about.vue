@@ -271,7 +271,7 @@ useSeoMeta({
   font-family: var(--heading-font);
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--gold);
+  color: var(--gold-ink);
   margin-bottom: 0.75rem;
 }
 
@@ -299,7 +299,7 @@ useSeoMeta({
 
 .region-badge {
   display: inline-block;
-  background: rgba(201, 168, 76, 0.2);
+  background: rgba(212, 163, 56, 0.2);
   border: 1px solid var(--gold);
   color: var(--gold-light);
   font-size: 0.75rem;
@@ -497,8 +497,8 @@ useSeoMeta({
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--gold-hover);
-  background: rgba(201, 168, 76, 0.12);
-  border: 1px solid rgba(201, 168, 76, 0.3);
+  background: rgba(212, 163, 56, 0.12);
+  border: 1px solid rgba(212, 163, 56, 0.3);
   padding: 0.35rem 0.75rem;
   border-radius: 100px;
 }

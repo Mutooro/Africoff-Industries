@@ -224,16 +224,16 @@ onUnmounted(() => {
 
 /* Main Navbar */
 .navbar {
-  background: rgba(27, 94, 32, 0.95);
+  background: rgba(10, 36, 19, 0.95);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(201, 168, 76, 0.18);
+  border-bottom: 1px solid rgba(212, 163, 56, 0.18);
   padding: 0.85rem 0;
   transition: all 0.3s ease;
 }
 
 .is-scrolled .navbar {
-  background: rgba(27, 94, 32, 0.97);
+  background: rgba(10, 36, 19, 0.97);
   padding: 0.65rem 0;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 }

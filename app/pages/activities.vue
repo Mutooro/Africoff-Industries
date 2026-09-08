@@ -257,7 +257,7 @@ useSeoMeta({
   letter-spacing: 0.12em;
   font-weight: 700;
   color: var(--leaf);
-  background: rgba(76, 175, 80, 0.14);
+  background: rgba(31, 84, 47, 0.1);
   padding: 0.3rem 0.75rem;
   border-radius: 100px;
 }
@@ -318,7 +318,7 @@ useSeoMeta({
 
 .std-card {
   background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(201, 168, 76, 0.3);
+  border: 1px solid rgba(212, 163, 56, 0.3);
   padding: 1.8rem;
   border-radius: 16px;
   color: #ffffff;

@@ -226,7 +226,7 @@ const schemeBenefits = [
 
 .testimonial-card {
   background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(201, 168, 76, 0.3);
+  border: 1px solid rgba(212, 163, 56, 0.3);
   backdrop-filter: blur(12px);
   border-radius: 20px;
   padding: 3rem 2.5rem;

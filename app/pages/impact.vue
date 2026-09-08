@@ -177,8 +177,8 @@ useSeoMeta({
 }
 
 .impact-stat-pill {
-  background: rgba(76, 175, 80, 0.12);
-  border: 1px solid rgba(56, 142, 60, 0.25);
+  background: rgba(31, 84, 47, 0.08);
+  border: 1px solid rgba(31, 84, 47, 0.2);
   color: var(--forest);
   padding: 0.65rem 1rem;
   border-radius: 10px;

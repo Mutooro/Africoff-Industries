@@ -180,15 +180,15 @@ useSeoMeta({
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #75f36b;
-  box-shadow: 0 0 0 0 rgba(117, 243, 107, 0.7);
+  background: var(--eudr-tint);
+  box-shadow: 0 0 0 0 rgba(220, 252, 231, 0.7);
   animation: pulseDot 2.2s infinite;
 }
 
 @keyframes pulseDot {
-  0% { box-shadow: 0 0 0 0 rgba(117, 243, 107, 0.7); }
-  70% { box-shadow: 0 0 0 12px rgba(117, 243, 107, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(117, 243, 107, 0); }
+  0% { box-shadow: 0 0 0 0 rgba(220, 252, 231, 0.7); }
+  70% { box-shadow: 0 0 0 12px rgba(220, 252, 231, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(220, 252, 231, 0); }
 }
 
 /* EUDR Spotlight */
@@ -216,8 +216,8 @@ useSeoMeta({
   font-size: 1.4rem;
   font-weight: 700;
   color: var(--gold-light);
-  background: rgba(201, 168, 76, 0.15);
-  border: 1px solid rgba(201, 168, 76, 0.35);
+  background: rgba(212, 163, 56, 0.15);
+  border: 1px solid rgba(212, 163, 56, 0.35);
   width: 44px;
   height: 44px;
   border-radius: 12px;
@@ -241,7 +241,7 @@ useSeoMeta({
 
 .visual-glass-card {
   background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(201, 168, 76, 0.35);
+  border: 1px solid rgba(212, 163, 56, 0.35);
   backdrop-filter: blur(20px);
   border-radius: 24px;
   padding: 2.5rem;
@@ -252,8 +252,8 @@ useSeoMeta({
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(82, 183, 136, 0.18);
-  border: 1px solid rgba(82, 183, 136, 0.4);
+  background: rgba(165, 209, 172, 0.15);
+  border: 1px solid rgba(165, 209, 172, 0.35);
   color: var(--sage-light);
   font-size: 0.75rem;
   font-weight: 700;
@@ -289,15 +289,16 @@ useSeoMeta({
 }
 
 .meta-val {
+  font-family: var(--mono-font);
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: #ffffff;
 }
 
 .polygon-visual-mock {
   height: 140px;
   border-radius: 14px;
-  background: linear-gradient(135deg, rgba(76, 175, 80, 0.45), rgba(27, 94, 32, 0.85));
+  background: linear-gradient(135deg, rgba(31, 84, 47, 0.5), rgba(10, 36, 19, 0.9));
   border: 1px solid rgba(255, 255, 255, 0.15);
   position: relative;
   overflow: hidden;
@@ -311,7 +312,7 @@ useSeoMeta({
   width: 90px;
   height: 70px;
   border: 2px dashed var(--gold-light);
-  background: rgba(201, 168, 76, 0.18);
+  background: rgba(212, 163, 56, 0.18);
   clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
 }
 
@@ -321,7 +322,7 @@ useSeoMeta({
   font-size: 0.82rem;
   font-weight: 700;
   color: #ffffff;
-  background: rgba(27, 94, 32, 0.85);
+  background: rgba(10, 36, 19, 0.85);
   padding: 0.4rem 0.9rem;
   border-radius: 100px;
   border: 1px solid var(--gold);

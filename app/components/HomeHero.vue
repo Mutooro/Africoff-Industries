@@ -256,7 +256,7 @@ onUnmounted(() => {
   border-radius: 28px;
   background: var(--forest-dark);
   color: #ffffff;
-  border: 1px solid rgba(212, 175, 55, 0.16);
+  border: 1px solid rgba(212, 163, 56, 0.16);
   box-shadow:
     0 30px 70px rgba(10, 35, 25, 0.22),
     0 6px 18px rgba(10, 35, 25, 0.12);
@@ -340,8 +340,8 @@ onUnmounted(() => {
   align-items: center;
   gap: 0.65rem;
   padding: 0.55rem 1.1rem;
-  background: rgba(212, 175, 55, 0.1);
-  border: 1px solid rgba(212, 175, 55, 0.35);
+  background: rgba(212, 163, 56, 0.1);
+  border: 1px solid rgba(212, 163, 56, 0.35);
   border-radius: 9999px;
   backdrop-filter: blur(10px);
   margin-bottom: 2rem;
@@ -423,7 +423,7 @@ onUnmounted(() => {
 .hh-subtitle {
   font-size: clamp(1.05rem, 1.4vw, 1.22rem);
   line-height: 1.68;
-  color: rgba(249, 246, 240, 0.82);
+  color: rgba(246, 242, 234, 0.82);
   margin-bottom: 2.4rem;
   max-width: 620px;
 }
@@ -443,11 +443,11 @@ onUnmounted(() => {
   justify-content: center;
   gap: 0.6rem;
   background: linear-gradient(135deg, var(--gold-light), var(--gold));
-  color: var(--forest-dark);
+  color: var(--roast-espresso);
   font-size: 1rem;
   font-weight: 700;
   padding: 0.95rem 1.9rem;
-  border-radius: 9999px;
+  border-radius: 0.75rem;
   border: 1px solid rgba(255, 255, 255, 0.25);
   box-shadow: 0 8px 24px var(--gold-glow);
   transition: var(--transition);
@@ -455,9 +455,9 @@ onUnmounted(() => {
 
 .hh-btn-primary:hover {
   background: linear-gradient(135deg, #f2da8b, var(--gold-light));
-  color: var(--forest-dark);
+  color: var(--roast-espresso);
   transform: translateY(-2px);
-  box-shadow: 0 12px 32px rgba(212, 175, 55, 0.45);
+  box-shadow: 0 12px 32px rgba(212, 163, 56, 0.45);
 }
 
 .btn-arrow {
@@ -477,7 +477,7 @@ onUnmounted(() => {
   font-size: 1rem;
   font-weight: 600;
   padding: 0.95rem 1.9rem;
-  border-radius: 9999px;
+  border-radius: 0.75rem;
   border: 1.5px solid rgba(255, 255, 255, 0.22);
   backdrop-filter: blur(12px);
   transition: var(--transition);
@@ -527,7 +527,7 @@ onUnmounted(() => {
   width: 100%;
   max-width: 540px;
   background: rgba(8, 26, 19, 0.7);
-  border: 1px solid rgba(212, 175, 55, 0.3);
+  border: 1px solid rgba(212, 163, 56, 0.3);
   border-radius: 20px;
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5), 0 0 30px var(--gold-glow);
   backdrop-filter: blur(20px);
@@ -598,10 +598,10 @@ onUnmounted(() => {
   font-size: 0.65rem;
   font-weight: 700;
   color: var(--gold-light);
-  background: rgba(212, 175, 55, 0.12);
+  background: rgba(212, 163, 56, 0.12);
   padding: 0.25rem 0.55rem;
   border-radius: 100px;
-  border: 1px solid rgba(212, 175, 55, 0.35);
+  border: 1px solid rgba(212, 163, 56, 0.35);
 }
 
 .chip-dot {
@@ -675,13 +675,13 @@ onUnmounted(() => {
 }
 
 .lot-step.active-step {
-  border-color: rgba(212, 175, 55, 0.4);
-  background: rgba(212, 175, 55, 0.08);
+  border-color: rgba(212, 163, 56, 0.4);
+  background: rgba(212, 163, 56, 0.08);
 }
 
 .lot-step.processing-step {
-  border-color: rgba(155, 197, 91, 0.35);
-  background: rgba(155, 197, 91, 0.06);
+  border-color: rgba(165, 209, 172, 0.35);
+  background: rgba(165, 209, 172, 0.06);
 }
 
 .step-badge {
@@ -693,8 +693,8 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(212, 175, 55, 0.15);
-  border: 1px solid rgba(212, 175, 55, 0.3);
+  background: rgba(212, 163, 56, 0.15);
+  border: 1px solid rgba(212, 163, 56, 0.3);
   color: var(--gold-light);
   flex-shrink: 0;
 }
@@ -717,13 +717,13 @@ onUnmounted(() => {
   font-weight: 700;
   padding: 0.25rem 0.55rem;
   border-radius: 6px;
-  background: rgba(155, 197, 91, 0.15);
+  background: rgba(165, 209, 172, 0.15);
   color: var(--sage-light);
   flex-shrink: 0;
 }
 
 .step-status.running {
-  background: rgba(212, 175, 55, 0.15);
+  background: rgba(212, 163, 56, 0.15);
   color: var(--gold-light);
 }
 
@@ -743,8 +743,8 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   gap: 0.55rem;
-  background: rgba(212, 175, 55, 0.1);
-  border: 1px solid rgba(212, 175, 55, 0.3);
+  background: rgba(212, 163, 56, 0.1);
+  border: 1px solid rgba(212, 163, 56, 0.3);
   border-radius: 8px;
   padding: 0.65rem 0.9rem;
   font-size: 0.74rem;

@@ -113,10 +113,10 @@ function handleSubscribe() {
 
 <style scoped>
 .site-footer {
-  background: #000000;
+  background: var(--forest);
   color: #ffffff;
   padding: 5.5rem 0 2rem;
-  border-top: 1px solid rgba(201, 168, 76, 0.2);
+  border-top: 1px solid rgba(212, 163, 56, 0.2);
   position: relative;
 }
 
@@ -142,8 +142,8 @@ function handleSubscribe() {
 
 .footer-origin-badge {
   display: inline-block;
-  background: rgba(76, 175, 80, 0.3);
-  border: 1px solid rgba(82, 183, 136, 0.3);
+  background: rgba(21, 128, 61, 0.25);
+  border: 1px solid rgba(165, 209, 172, 0.3);
   padding: 0.35rem 0.8rem;
   border-radius: 6px;
   color: var(--sage-light);
@@ -181,7 +181,7 @@ function handleSubscribe() {
 
 .social-pill:hover {
   background: var(--gold);
-  color: #12241a;
+  color: var(--roast-espresso);
   transform: translateY(-3px);
 }
 
@@ -229,7 +229,7 @@ function handleSubscribe() {
   flex: 1;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 100px;
+  border-radius: 0.75rem;
   padding: 0.7rem 1.2rem;
   color: #ffffff;
   font-size: 0.88rem;
@@ -242,9 +242,9 @@ function handleSubscribe() {
 
 .newsletter-btn {
   background: var(--gold);
-  color: #12241a;
+  color: var(--roast-espresso);
   border: none;
-  border-radius: 100px;
+  border-radius: 0.75rem;
   padding: 0.7rem 1.3rem;
   font-weight: 700;
   font-size: 0.85rem;

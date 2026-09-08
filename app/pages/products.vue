@@ -234,7 +234,7 @@ const filteredProducts = computed(() => {
 }
 
 .prod-type-pill {
-  background: rgba(76, 175, 80, 0.14);
+  background: rgba(31, 84, 47, 0.1);
   color: var(--forest);
   font-size: 0.75rem;
   font-weight: 700;
@@ -245,13 +245,13 @@ const filteredProducts = computed(() => {
 }
 
 .prod-grade-pill {
-  background: rgba(201, 168, 76, 0.15);
-  color: #7d5e16;
+  background: rgba(212, 163, 56, 0.15);
+  color: var(--gold-ink);
   font-size: 0.75rem;
   font-weight: 700;
   padding: 0.35rem 0.8rem;
   border-radius: 100px;
-  border: 1px solid rgba(201, 168, 76, 0.3);
+  border: 1px solid rgba(212, 163, 56, 0.3);
 }
 
 .product-catalog-card h3 {
@@ -325,7 +325,7 @@ const filteredProducts = computed(() => {
   font-weight: 600;
   padding: 0.35rem 0.75rem;
   border-radius: 8px;
-  border: 1px solid rgba(201, 168, 76, 0.25);
+  border: 1px solid rgba(212, 163, 56, 0.25);
 }
 
 .export-specs-grid {
@@ -505,9 +505,9 @@ const filteredProducts = computed(() => {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #7d5e16;
-  background: rgba(201, 168, 76, 0.15);
-  border: 1px solid rgba(201, 168, 76, 0.3);
+  color: var(--gold-ink);
+  background: rgba(212, 163, 56, 0.15);
+  border: 1px solid rgba(212, 163, 56, 0.3);
   padding: 0.35rem 0.75rem;
   border-radius: 100px;
 }

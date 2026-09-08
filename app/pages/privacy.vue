@@ -90,7 +90,7 @@ useSeoMeta({
 
 .legal-content p {
   font-size: 1rem;
-  color: #3b4e41;
+  color: var(--roast-umber);
   line-height: 1.7;
 }
 
@@ -99,7 +99,7 @@ useSeoMeta({
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
-  color: #3b4e41;
+  color: var(--roast-umber);
 }
 
 .legal-content li strong {
