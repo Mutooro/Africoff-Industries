@@ -826,6 +826,11 @@ function isChangingPage(to, from) {
 	if (to.matched.every((comp, index) => comp.components && comp.components.default === from.matched[index]?.components?.default)) return false;
 	return true;
 }
+var VALID_TAG_RE = /^[a-z][a-z0-9-]*$/i;
+/** Return `tag` if it is a safe HTML tag name, otherwise `fallback`. */
+function sanitizeTag(tag, fallback) {
+	return tag && VALID_TAG_RE.test(tag) ? tag : fallback;
+}
 function toArray(value) {
 	return Array.isArray(value) ? value : [value];
 }
@@ -979,27 +984,27 @@ var virtual_nuxt_node_modules_2F_cache_2Fnuxt_2F_nuxt_2Froutes_default = [
 	{
 		name: "news-slug",
 		path: "/news/:slug()",
-		component: () => import('../build/_slug_-D0yMggNI.mjs')
+		component: () => import('../build/_slug_-jfSU0Qtx.mjs')
 	},
 	{
 		name: "programs-slug",
 		path: "/programs/:slug()",
-		component: () => import('../build/_slug_-Di7Pi7-1.mjs')
+		component: () => import('../build/_slug_-sntdh4E6.mjs')
 	},
 	{
 		name: "about",
 		path: "/about",
-		component: () => import('../build/about-CwRBc9ut.mjs')
+		component: () => import('../build/about-JirBxg7T.mjs')
 	},
 	{
 		name: "accountability",
 		path: "/accountability",
-		component: () => import('../build/accountability-CnwBEagj.mjs')
+		component: () => import('../build/accountability-DWIJI_6W.mjs')
 	},
 	{
 		name: "activities",
 		path: "/activities",
-		component: () => import('../build/activities-SLEcx4xl.mjs')
+		component: () => import('../build/activities-VeN0EV0W.mjs')
 	},
 	{
 		name: "contact",
@@ -1009,17 +1014,17 @@ var virtual_nuxt_node_modules_2F_cache_2Fnuxt_2F_nuxt_2Froutes_default = [
 	{
 		name: "impact",
 		path: "/impact",
-		component: () => import('../build/impact-DqeMAbfQ.mjs')
+		component: () => import('../build/impact-0T4av7SD.mjs')
 	},
 	{
 		name: "news",
 		path: "/news",
-		component: () => import('../build/news-CWqobem2.mjs')
+		component: () => import('../build/news-CTIfPQwl.mjs')
 	},
 	{
 		name: "out-growers",
 		path: "/out-growers",
-		component: () => import('../build/out-growers-tI6QrRKL.mjs')
+		component: () => import('../build/out-growers-Ds2U0qxM.mjs')
 	},
 	{
 		name: "privacy",
@@ -1029,22 +1034,22 @@ var virtual_nuxt_node_modules_2F_cache_2Fnuxt_2F_nuxt_2Froutes_default = [
 	{
 		name: "products",
 		path: "/products",
-		component: () => import('../build/products-CrnKG6ZJ.mjs')
+		component: () => import('../build/products-lsW36hr2.mjs')
 	},
 	{
 		name: "programs",
 		path: "/programs",
-		component: () => import('../build/programs-BL7Sjuhg.mjs')
+		component: () => import('../build/programs-alLExMXl.mjs')
 	},
 	{
 		name: "value-chains",
 		path: "/value-chains",
-		component: () => import('../build/value-chains-CPKDtYFu.mjs')
+		component: () => import('../build/value-chains-CvoBUi5y.mjs')
 	},
 	{
 		name: "index",
 		path: "/",
-		component: () => import('../build/pages-C0fxOWLA.mjs')
+		component: () => import('../build/pages-CaDLfpK6.mjs')
 	}
 ];
 //#endregion
@@ -1299,7 +1304,7 @@ function resolveLayoutName(route, name) {
 }
 //#endregion
 //#region virtual:nuxt:node_modules%2F.cache%2Fnuxt%2F.nuxt%2Flayouts.mjs
-var virtual_nuxt_node_modules_2F_cache_2Fnuxt_2F_nuxt_2Flayouts_default = { default: defineAsyncComponent(() => import('../build/default-Bq_6tTbZ.mjs').then((m) => m.default || m)) };
+var virtual_nuxt_node_modules_2F_cache_2Fnuxt_2F_nuxt_2Flayouts_default = { default: defineAsyncComponent(() => import('../build/default-75u_Ek3j.mjs').then((m) => m.default || m)) };
 //#endregion
 //#region node_modules/nuxt/dist/app/components/nuxt-layout.js
 var LayoutLoader = defineComponent({
@@ -1589,7 +1594,7 @@ var _sfc_main$1 = {
 		const statusText = _error.statusMessage ?? (is404 ? "Page Not Found" : "Internal Server Error");
 		const description = _error.message || _error.toString();
 		const stack = void 0;
-		const _Error404 = defineAsyncComponent(() => import('../build/error-404-qUUlyaaK.mjs'));
+		const _Error404 = defineAsyncComponent(() => import('../build/error-404-B_kf9YjX.mjs'));
 		const _Error = defineAsyncComponent(() => import('../build/error-500-BzIfp9sl.mjs'));
 		const ErrorTemplate = is404 ? _Error404 : _Error;
 		return (_ctx, _push, _parent, _attrs) => {
@@ -1690,5 +1695,5 @@ const entry = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
   default: entry_default
 }, Symbol.toStringTag, { value: 'Module' }));
 
-export { useSeoMeta$1 as a, useHead$1 as b, createError$1 as c, useRouter as d, encodeRoutePath as e, useRuntimeConfig as f, useNuxtApp as g, nuxtLinkDefaults as h, entry as i, navigateTo as n, resolveRouteObject as r, useRoute$2 as u };
+export { useSeoMeta$1 as a, useHead$1 as b, createError$1 as c, useRouter as d, encodeRoutePath as e, useRuntimeConfig as f, useNuxtApp as g, nuxtLinkDefaults as h, entry as i, navigateTo as n, resolveRouteObject as r, sanitizeTag as s, useRoute$2 as u };
 //# sourceMappingURL=entry.mjs.map

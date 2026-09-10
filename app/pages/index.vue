@@ -7,20 +7,45 @@ useSeoMeta({
   description: 'AFRICOFF Industries connects Ugandan coffee smallholders with modern agro-processing, EUDR-compliant polygon traceability, and premium global markets.',
 })
 
-/* Home video segment loop: 1:03 (63s) → 1:07 (67s) */
+/* Home video segment loop: 1:04 (64s) → 1:08 (68s) */
 const VIDEO_START = 64
 const VIDEO_END = 68
 
-function onVideoLoadedMetadata(e: Event) {
-  const video = e.target as HTMLVideoElement
+/**
+ * On SSR the <video> tag is in the raw HTML, so `loadedmetadata` usually fires
+ * before Vue hydrates and attaches the listener — and some browsers drop seeks
+ * made before media data is buffered. The seek is therefore retried from every
+ * relevant lifecycle event, plus a `timeupdate` guard below.
+ */
+function seekToLoopStart(video: HTMLVideoElement) {
   if (video.currentTime < VIDEO_START) {
-    video.currentTime = VIDEO_START
+    try {
+      video.currentTime = VIDEO_START
+    } catch {
+      /* not seekable yet — retried on the next event */
+    }
   }
+}
+
+function onVideoLoadedMetadata(e: Event) {
+  seekToLoopStart(e.target as HTMLVideoElement)
+}
+
+function onVideoCanPlay(e: Event) {
+  seekToLoopStart(e.target as HTMLVideoElement)
+}
+
+function onVideoPlaying(e: Event) {
+  seekToLoopStart(e.target as HTMLVideoElement)
 }
 
 function onVideoTimeUpdate(e: Event) {
   const video = e.target as HTMLVideoElement
-  if (video.currentTime >= VIDEO_END) {
+  if (video.currentTime < VIDEO_START) {
+    // Playback started from 0 (initial seek missed or native `loop` wrapped):
+    // jump into the loop window instead of letting the intro play.
+    seekToLoopStart(video)
+  } else if (video.currentTime >= VIDEO_END) {
     video.currentTime = VIDEO_START
   }
 }
@@ -28,7 +53,7 @@ function onVideoTimeUpdate(e: Event) {
 
 <template>
   <div>
-    <!-- Home Hero — Quantabiz-style layout, AFRICOFF-branded -->
+    
     <HomeHero />
 
     <!-- Stats Bar -->
@@ -48,17 +73,27 @@ function onVideoTimeUpdate(e: Event) {
         </div>
 
         <div class="home-video-frame">
-          <video
-            src="/assets/images/Sucafina%20Movie%202020.mp4"
-            title="The AFRICOFF Coffee Story"
-            autoplay
-            muted
-            loop
-            playsinline
-            preload="metadata"
-            @loadedmetadata="onVideoLoadedMetadata"
-            @timeupdate="onVideoTimeUpdate"
-          />
+          <noscript>
+            <img src="/assets/images/coffee-sorting.webp" alt="Sorting Ugandan green coffee" loading="lazy" />
+          </noscript>
+          <!-- Client-only mount: guarantees the seek-to-64s listeners exist before the
+               video can start playing. An SSR-rendered video autoplays from 0 before
+               Vue hydrates, which let the intro play before the loop engaged. -->
+          <ClientOnly>
+            <video
+              src="/assets/images/Sucafina%20Movie%202020.mp4"
+              title="The AFRICOFF Coffee Story"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              @loadedmetadata="onVideoLoadedMetadata"
+              @canplay="onVideoCanPlay"
+              @playing="onVideoPlaying"
+              @timeupdate="onVideoTimeUpdate"
+            />
+          </ClientOnly>
         </div>
       </div>
     </section>
@@ -270,11 +305,13 @@ function onVideoTimeUpdate(e: Event) {
 }
 
 .home-video-frame iframe,
-.home-video-frame video {
+.home-video-frame video,
+.home-video-frame img {
   display: block;
   width: 100%;
   height: 100%;
   border: 0;
+  object-fit: cover;
 }
 
 @keyframes pulseDot {
