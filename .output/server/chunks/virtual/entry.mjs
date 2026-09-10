@@ -989,7 +989,7 @@ var virtual_nuxt_node_modules_2F_cache_2Fnuxt_2F_nuxt_2Froutes_default = [
 	{
 		name: "about",
 		path: "/about",
-		component: () => import('../build/about-Ct0l-LqZ.mjs')
+		component: () => import('../build/about-B4XsPuy0.mjs')
 	},
 	{
 		name: "accountability",
@@ -999,17 +999,17 @@ var virtual_nuxt_node_modules_2F_cache_2Fnuxt_2F_nuxt_2Froutes_default = [
 	{
 		name: "activities",
 		path: "/activities",
-		component: () => import('../build/activities-BsEi2gc0.mjs')
+		component: () => import('../build/activities-CUyfCC4i.mjs')
 	},
 	{
 		name: "contact",
 		path: "/contact",
-		component: () => import('../build/contact-Bzzk3UNO.mjs')
+		component: () => import('../build/contact-CUu8LMMp.mjs')
 	},
 	{
 		name: "impact",
 		path: "/impact",
-		component: () => import('../build/impact-FGSvP4qX.mjs')
+		component: () => import('../build/impact-Ci_42yV3.mjs')
 	},
 	{
 		name: "news",
@@ -1019,7 +1019,7 @@ var virtual_nuxt_node_modules_2F_cache_2Fnuxt_2F_nuxt_2Froutes_default = [
 	{
 		name: "out-growers",
 		path: "/out-growers",
-		component: () => import('../build/out-growers-BS60PgGe.mjs')
+		component: () => import('../build/out-growers-C7l0xbZQ.mjs')
 	},
 	{
 		name: "privacy",
@@ -1029,7 +1029,7 @@ var virtual_nuxt_node_modules_2F_cache_2Fnuxt_2F_nuxt_2Froutes_default = [
 	{
 		name: "products",
 		path: "/products",
-		component: () => import('../build/products-XmfruoqH.mjs')
+		component: () => import('../build/products-DEv-wb-a.mjs')
 	},
 	{
 		name: "programs",
@@ -1044,7 +1044,7 @@ var virtual_nuxt_node_modules_2F_cache_2Fnuxt_2F_nuxt_2Froutes_default = [
 	{
 		name: "index",
 		path: "/",
-		component: () => import('../build/pages-0TMd0J7F.mjs')
+		component: () => import('../build/pages-DC_NXGQY.mjs')
 	}
 ];
 //#endregion

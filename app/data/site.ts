@@ -1,5 +1,5 @@
 import type { Component } from 'vue'
-import { Sprout, Cog, Coffee, Satellite, Handshake, Ship, Store, Scale, TreePine, ShieldCheck, HeartHandshake, HandCoins, BookOpen, BadgeCheck, Leaf, Building2, GraduationCap, Truck, Globe } from '@lucide/vue'
+import { Sprout, Cog, Coffee, Satellite, Handshake, Ship, Store, Scale, TreePine, ShieldCheck, HeartHandshake, HandCoins, BookOpen, BadgeCheck, Leaf, Building2, GraduationCap, Truck, Globe, FlaskConical } from '@lucide/vue'
 
 export interface Activity {
   number: string
@@ -41,6 +41,7 @@ export interface ProductItem {
   screen: string
   cupProfile: string[]
   description: string
+  image?: string
 }
 
 export const siteConfig = {
@@ -221,6 +222,7 @@ export const products: ProductItem[] = [
     screen: '18/19',
     cupProfile: ['Blackcurrant', 'Citrus Blossom', 'Caramel Sweetness', 'Silky Body'],
     description: 'Our flagship specialty Arabica grown on rich volcanic soils. Exceptionally clean cup with crisp citric acidity, complex stone fruit notes, and a sweet, lingering brown sugar finish.',
+    image: '/assets/images/z_wp_a.webp',
   },
   {
     id: 'bugisu-ab',
@@ -233,6 +235,7 @@ export const products: ProductItem[] = [
     screen: '16/17',
     cupProfile: ['Orange Zest', 'Milk Chocolate', 'Toasted Almond', 'Balanced Acidity'],
     description: 'Classic Mount Elgon profile offering rich chocolate undertones, balanced citrus brightness, and great versatility for espresso roasts and single-origin filters.',
+    image: '/assets/images/z_np_a.webp',
   },
   {
     id: 'drugar-specialty',
@@ -245,6 +248,7 @@ export const products: ProductItem[] = [
     screen: '15/17',
     cupProfile: ['Wild Berry', 'Dark Chocolate', 'Winey Fruit', 'Syrupy Mouthfeel'],
     description: 'Hand-picked ripe cherries naturally dried on raised mesh beds in the misty Rwenzori foothills. Heavy body, jammy blueberry notes, and dark cacao finish.',
+    image: '/assets/images/z_np.webp',
   },
   {
     id: 'natural-uganda-robusta',
@@ -257,6 +261,20 @@ export const products: ProductItem[] = [
     screen: '12, 15 & 18',
     cupProfile: ['Dark Cocoa', 'Toasted Hazelnut', 'Cedarwood', 'Dense Crema'],
     description: 'Our Natural Uganda Robusta (NUR) is sourced from out-growers across Uganda and is available in Screen 12, Screen 15, and Screen 18 grades. Renowned worldwide for its neutral cup, rich crema generation, and bold body — the perfect foundation for specialty espresso blends and instant coffee manufacturing.',
+    image: '/assets/images/12.webp',
+  },
+  {
+    id: 'bwana-koffee',
+    name: 'Bwana Koffee — Medium Ground',
+    type: 'Value-Added',
+    grade: '120g Retail Pack · Medium Ground',
+    region: 'Uganda Highland Blend',
+    altitude: 'Highland Terroir',
+    process: 'Natural · Medium Drum Roasted & Ground',
+    screen: 'Selected Beans',
+    cupProfile: ['Rich Aroma', 'Smooth Body', 'Gentle Cocoa', 'Sweet Finish'],
+    description: 'Our pride retail brand on the Ugandan market — a natural, proudly organic Ugandan coffee, medium ground for a perfect cup in just 4 minutes. Add sugar and milk to taste. Store in a cool, dry place. It\'s coffee o\'clock!',
+    image: '/assets/images/bwana_coffee.jpg',
   },
   {
     id: 'africoff-signature-roast',
@@ -269,6 +287,7 @@ export const products: ProductItem[] = [
     screen: 'Selected Beans',
     cupProfile: ['Dark Honey', 'Roasted Macadamia', 'Velvety Cocoa', 'Smooth Finish'],
     description: 'Our pride roasted product, carefully crafted to highlight the best of Ugandan coffee tradition. Available for export packaging and domestic hospitality.',
+    image: '/assets/images/1.jpg',
   },
   {
     id: 'africoff-heritage-dark-roast',
@@ -281,6 +300,7 @@ export const products: ProductItem[] = [
     screen: 'Selected Beans',
     cupProfile: ['Bittersweet Cocoa', 'Toasted Walnut', 'Cane Sugar', 'Bold Smoky Finish'],
     description: 'A deeper roast level for lovers of bold, intense espresso. Low acidity, heavy body, and a lingering smoky-sweet finish — available as whole bean or ground coffee.',
+    image: '/assets/images/coffee-cup.jpg',
   },
   {
     id: 'africoff-house-blend',
@@ -293,6 +313,7 @@ export const products: ProductItem[] = [
     screen: 'Selected Beans',
     cupProfile: ['Milk Chocolate', 'Roasted Hazelnut', 'Gentle Spice', 'Thick Crema'],
     description: 'Our signature blend pairs highland Arabica sweetness with fine Robusta body and crema — crafted for cafés, hotels, and everyday brewing. Available for retail and private-label packing.',
+    image: '/assets/images/34.jpg',
   },
 ]
 
@@ -329,7 +350,19 @@ export const farmServices: FarmService[] = [
       'Planting guidance and post-planting agronomy follow-up',
     ],
     icon: Sprout,
-    image: '/assets/images/services-details-img-3.jpg',
+    image: '/assets/images/nursery_bed.jpeg',
+  },
+  {
+    id: 'quality-testing',
+    name: 'Coffee Quality Testing & Cupping',
+    summary: 'We assess samples through structured cupping and quality checks so growers and buyers can make decisions with confidence before shipment.',
+    points: [
+      'Pre-shipment sample preparation and lot comparison',
+      'Sensory cupping for flavour, body, acidity, and defects',
+      'Practical feedback for improved harvest and processing quality',
+    ],
+    icon: FlaskConical,
+    image: '/assets/images/lab_test01.jpeg',
   },
 ]
 

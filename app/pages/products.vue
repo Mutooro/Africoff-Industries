@@ -1,12 +1,23 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import { products, farmServices, certifications } from '~/data/site'
-import { Coffee, ArrowUpRight, Package, Ship, Plane } from '@lucide/vue'
+import { Coffee, ArrowUpRight, Package, Ship, Plane, MapPin, Cog } from '@lucide/vue'
 
 useSeoMeta({
   title: 'Specialty Coffee Offerings and Green Bean Grades · AFRICOFF Industries',
   description: 'Explore AFRICOFF’s premium Ugandan green coffee catalogue: Bugisu Washed Arabica AA/AB, Natural Drugar, Natural Uganda Robusta (NUR) Screens 12, 15 & 18, and artisanal roasted selections.',
 })
+
+const bwanaDrinks = [
+  'Cappuccino',
+  'Espresso',
+  'Americano',
+  'Latte',
+  'Mocha',
+  'Macchiato',
+  'Flat White',
+  'Iced Cappuccino',
+]
 
 const activeFilter = ref<'All' | 'Arabica' | 'Robusta' | 'Value-Added'>('All')
 
@@ -56,50 +67,89 @@ const filteredProducts = computed(() => {
 
         <!-- Products Grid -->
         <div class="products-grid-catalog">
-          <div v-for="prod in filteredProducts" :key="prod.id" class="product-catalog-card">
-            <div class="product-card-top">
-              <span class="prod-type-pill">{{ prod.type }}</span>
-              <span class="prod-grade-pill">{{ prod.grade }}</span>
+          <article v-for="prod in filteredProducts" :key="prod.id" class="product-catalog-card">
+            <!-- Image hero with overlaid title -->
+            <div class="prod-hero">
+              <img v-if="prod.image" :src="prod.image" :alt="prod.name" loading="lazy" />
+              <div v-else class="prod-hero-fallback" aria-hidden="true"></div>
+              <div class="prod-hero-scrim" aria-hidden="true"></div>
+              <span class="prod-type-pill">{{ prod.type === 'Value-Added' ? 'Roasted' : prod.type }}</span>
+              <h3>{{ prod.name }}</h3>
             </div>
 
-            <h3>{{ prod.name }}</h3>
-            <p class="prod-desc">{{ prod.description }}</p>
+            <div class="prod-body">
+              <p class="prod-desc">{{ prod.description }}</p>
 
-            <div class="prod-spec-table">
-              <div class="spec-row">
-                <span class="spec-k">Origin:</span>
-                <span class="spec-v">{{ prod.region }}</span>
+              <!-- Compact origin & process chips -->
+              <div class="prod-meta-chips">
+                <span class="meta-chip" :title="`Origin: ${prod.region}`">
+                  <MapPin :size="14" :stroke-width="2.5" /> {{ prod.region }}
+                </span>
+                <span class="meta-chip" :title="`Process: ${prod.process}`">
+                  <Cog :size="14" :stroke-width="2.5" /> {{ prod.process }}
+                </span>
               </div>
-              <div class="spec-row">
-                <span class="spec-k">Altitude:</span>
-                <span class="spec-v">{{ prod.altitude }}</span>
-              </div>
-              <div class="spec-row">
-                <span class="spec-k">Processing:</span>
-                <span class="spec-v">{{ prod.process }}</span>
-              </div>
-              <div class="spec-row">
-                <span class="spec-k">Screen Size:</span>
-                <span class="spec-v">{{ prod.screen }}</span>
-              </div>
-            </div>
 
-            <!-- Cup Profile Flavor Notes -->
-            <div class="cup-profile-box">
-              <span class="cup-label">Cup Sensory Notes:</span>
+              <!-- Cup Profile Flavor Notes -->
               <div class="flavor-tags">
                 <span v-for="note in prod.cupProfile" :key="note" class="flavor-tag">
                   <Coffee :size="13" :stroke-width="2.5" /> {{ note }}
                 </span>
               </div>
-            </div>
 
-            <div class="prod-card-bottom">
-              <NuxtLink :to="`/contact?product=${encodeURIComponent(prod.name)}`" class="btn-primary" style="width: 100%; justify-content: center;">
-                <span>Request Sample / Spec Sheet</span>
+              <div class="prod-card-bottom">
+                <NuxtLink :to="`/contact?product=${encodeURIComponent(prod.name)}`" class="btn-primary" style="width: 100%; justify-content: center;">
+                  <span>Get This Coffee</span>
+                  <ArrowUpRight class="btn-icon" :size="18" :stroke-width="2.5" />
+                </NuxtLink>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bwana Koffee Featured Showcase -->
+    <section class="py-section bwana-section">
+      <div class="shell">
+        <div class="center-text" style="margin-bottom: 3rem;">
+          <span class="section-label">On the market</span>
+          <h2 class="section-title">Meet <em>Bwana Koffee</em></h2>
+          <p class="section-subtitle">
+            Our retail roasted coffee brand — natural, proudly Ugandan and organic. It's coffee o'clock!
+          </p>
+        </div>
+
+        <div class="bwana-showcase">
+          <div class="bwana-img-wrap">
+            <img src="/assets/images/bwana_coffee.jpg" alt="Bwana Koffee 120g Medium Ground retail pack" loading="lazy" />
+          </div>
+          <div class="bwana-body">
+            <img class="bwana-logo" src="/assets/images/bwana.jpg" alt="Bwana Koffee logo" loading="lazy" />
+            <h3>Bwana Koffee — 120g Medium Ground</h3>
+            <p class="bwana-tagline">"It's coffee o'clock" — a spoonful of hot water is all it takes. Ready in 4 minutes; add sugar and milk to taste.</p>
+            <ul class="bwana-points">
+              <li>Natural, proudly Ugandan original &amp; organic coffee</li>
+              <li>Medium drum roasted and ground for everyday brewing</li>
+              <li>Convenient 120g retail pack — store in a cool, dry place</li>
+              <li>A product of AFRICOFF Industries (U) Limited, Kampala</li>
+            </ul>
+            <div class="bwana-actions">
+              <NuxtLink to="/contact?product=Bwana%20Koffee" class="btn-primary">
+                <span>Order Bwana Koffee</span>
                 <ArrowUpRight class="btn-icon" :size="18" :stroke-width="2.5" />
               </NuxtLink>
             </div>
+          </div>
+          <div class="bwana-catering">
+            <img class="bwana-catering-img" src="/assets/images/bwanacoffe.jpeg" alt="Bwana Koffee mobile coffee bar — drinks served at events" loading="lazy" />
+            <h4>Mobile Coffee Bar for Your Events</h4>
+            <p>We serve a variety of fresh coffee drinks at your function:</p>
+            <div class="bwana-drinks">
+              <span v-for="drink in bwanaDrinks" :key="drink" class="bwana-drink-tag">{{ drink }}</span>
+            </div>
+            <p class="bwana-events">Corporate events · Weddings · Baby showers · Graduations · Birthdays · Introductions &amp; more.</p>
+            <a class="text-link" href="tel:+256784851072">For orders, call +256 784 851 072 <span><ArrowUpRight :size="16" :stroke-width="2.5" /></span></a>
           </div>
         </div>
       </div>
@@ -202,6 +252,176 @@ const filteredProducts = computed(() => {
 </template>
 
 <style scoped>
+.prod-card-img {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 14px;
+  margin-bottom: 1.25rem;
+  background: var(--offwhite);
+}
+
+.prod-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.product-catalog-card:hover .prod-card-img img {
+  transform: scale(1.04);
+}
+
+/* Bwana Koffee Showcase */
+.bwana-section {
+  background: linear-gradient(180deg, var(--cream) 0%, var(--offwhite) 100%);
+}
+
+.bwana-showcase {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.bwana-img-wrap {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow-hover);
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bwana-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bwana-body {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 2.5rem 2.4rem;
+  border: 1px solid var(--line);
+  box-shadow: var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.bwana-logo {
+  max-width: 160px;
+  margin-bottom: 1.25rem;
+  border-radius: 10px;
+}
+
+.bwana-body h3 {
+  font-size: 1.5rem;
+  color: var(--forest);
+  margin-bottom: 0.75rem;
+}
+
+.bwana-tagline {
+  font-size: 1rem;
+  color: var(--gold-ink);
+  font-weight: 600;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.bwana-points {
+  list-style: none;
+  display: grid;
+  gap: 0.6rem;
+  margin-bottom: 1.75rem;
+}
+
+.bwana-points li {
+  font-size: 0.94rem;
+  color: var(--muted);
+  padding-left: 1.4rem;
+  position: relative;
+}
+
+.bwana-points li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--leaf);
+  font-weight: 700;
+}
+
+.bwana-catering {
+  background: var(--forest);
+  border-radius: 20px;
+  padding: 2.3rem 2.2rem;
+  color: #ffffff;
+  box-shadow: var(--card-shadow-hover);
+}
+
+.bwana-catering-img {
+  width: 100%;
+  border-radius: 14px;
+  margin-bottom: 1.4rem;
+}
+
+.bwana-catering h4 {
+  font-size: 1.25rem;
+  margin-bottom: 0.55rem;
+}
+
+.bwana-catering p {
+  font-size: 0.94rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 1rem;
+}
+
+.bwana-drinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.bwana-drink-tag {
+  background: rgba(212, 163, 56, 0.18);
+  border: 1px solid rgba(212, 163, 56, 0.4);
+  color: var(--gold-light);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.35rem 0.8rem;
+  border-radius: 100px;
+}
+
+.bwana-events {
+  font-size: 0.85rem !important;
+  margin-bottom: 1.2rem !important;
+}
+
+.bwana-catering .text-link {
+  color: var(--gold-light);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+@media (max-width: 1080px) {
+  .bwana-showcase {
+    grid-template-columns: 1fr 1fr;
+  }
+  .bwana-catering {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .bwana-showcase {
+    grid-template-columns: 1fr;
+  }
+}
+
 .products-grid-catalog {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
@@ -211,102 +431,115 @@ const filteredProducts = computed(() => {
 .product-catalog-card {
   background: #ffffff;
   border-radius: 20px;
-  padding: 2.5rem 2.2rem;
+  padding: 0;
   border: 1px solid var(--line);
   box-shadow: var(--card-shadow);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  overflow: hidden;
   transition: var(--transition);
 }
 
 .product-catalog-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px);
   box-shadow: var(--card-shadow-hover);
   border-color: var(--gold);
 }
 
-.product-card-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1.25rem;
+/* --- Image hero with overlaid title --- */
+.prod-hero {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--offwhite);
+}
+
+.prod-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.product-catalog-card:hover .prod-hero img {
+  transform: scale(1.06);
+}
+
+.prod-hero-fallback {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--forest) 0%, var(--roast-umber, #4a2e1b) 100%);
+}
+
+.prod-hero-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(20, 40, 28, 0.05) 30%, rgba(15, 30, 20, 0.78) 100%);
+  pointer-events: none;
 }
 
 .prod-type-pill {
-  background: rgba(31, 84, 47, 0.1);
-  color: var(--forest);
-  font-size: 0.75rem;
-  font-weight: 700;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 2;
+  background: var(--gold);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  padding: 0.35rem 0.8rem;
+  padding: 0.4rem 0.9rem;
   border-radius: 100px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
-.prod-grade-pill {
-  background: rgba(212, 163, 56, 0.15);
-  color: var(--gold-ink);
-  font-size: 0.75rem;
-  font-weight: 700;
-  padding: 0.35rem 0.8rem;
-  border-radius: 100px;
-  border: 1px solid rgba(212, 163, 56, 0.3);
+.prod-hero h3 {
+  position: absolute;
+  left: 1.4rem;
+  right: 1.4rem;
+  bottom: 1.1rem;
+  z-index: 2;
+  color: #ffffff;
+  font-size: 1.35rem;
+  line-height: 1.25;
+  margin: 0;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
 }
 
-.product-catalog-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.8rem;
-  color: var(--forest);
+/* --- Card body --- */
+.prod-body {
+  padding: 1.6rem 1.5rem 1.8rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .prod-desc {
-  font-size: 0.94rem;
+  font-size: 0.92rem;
   color: var(--muted);
   line-height: 1.6;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.1rem;
 }
 
-.prod-spec-table {
+.prod-meta-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.1rem;
+}
+
+.meta-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
   background: var(--offwhite);
-  border-radius: 12px;
-  padding: 1rem 1.25rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-  margin-bottom: 1.5rem;
-  border: 1px solid rgba(26, 61, 43, 0.06);
-}
-
-.spec-row {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.88rem;
-}
-
-.spec-k {
-  color: var(--muted);
-  font-weight: 600;
-}
-
-.spec-v {
+  border: 1px solid rgba(26, 61, 43, 0.12);
   color: var(--forest);
-  font-weight: 700;
-  text-align: right;
-}
-
-.cup-profile-box {
-  margin-bottom: 2rem;
-}
-
-.cup-label {
-  display: block;
   font-size: 0.78rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-weight: 700;
-  color: var(--leaf);
-  margin-bottom: 0.65rem;
+  font-weight: 600;
+  padding: 0.35rem 0.75rem;
+  border-radius: 100px;
 }
 
 .flavor-tags {
@@ -400,6 +633,7 @@ const filteredProducts = computed(() => {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: saturate(1.06) contrast(1.04);
   transition: transform 0.5s ease;
 }
 
