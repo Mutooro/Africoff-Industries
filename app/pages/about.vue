@@ -72,8 +72,8 @@ useSeoMeta({
               loading="lazy"
             />
             <SafeImage
-              src="/assets/images/women.jpeg"
-              alt="Farmer inspecting coffee harvest"
+              src="/assets/images/Coffee-planting.webp"
+              alt="Coffee seedlings being planted by a grower"
               class="about-img-accent"
               loading="lazy"
             />
@@ -151,7 +151,8 @@ useSeoMeta({
         <div class="team-grid">
           <article v-for="member in teamMembers" :key="member.name" class="team-card">
             <div class="team-avatar" aria-hidden="true">
-              <span class="team-initials">{{ member.initials }}</span>
+              <img v-if="member.image" :src="member.image" :alt="member.name" loading="lazy" />
+              <span v-else class="team-initials">{{ member.initials }}</span>
             </div>
             <h3 class="team-name">{{ member.name }}</h3>
             <span class="team-role">{{ member.role }}</span>
@@ -374,6 +375,14 @@ useSeoMeta({
   justify-content: center;
   margin-bottom: 1.4rem;
   box-shadow: 0 8px 20px -8px rgba(11, 34, 26, 0.35);
+  overflow: hidden;
+}
+
+.team-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
 }
 
 .team-initials {

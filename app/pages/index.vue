@@ -6,6 +6,24 @@ useSeoMeta({
   title: 'AFRICOFF Industries — Sustainable Coffee Value Chains in Uganda',
   description: 'AFRICOFF Industries connects Ugandan coffee smallholders with modern agro-processing, EUDR-compliant polygon traceability, and premium global markets.',
 })
+
+/* Home video segment loop: 1:03 (63s) → 1:07 (67s) */
+const VIDEO_START = 64
+const VIDEO_END = 68
+
+function onVideoLoadedMetadata(e: Event) {
+  const video = e.target as HTMLVideoElement
+  if (video.currentTime < VIDEO_START) {
+    video.currentTime = VIDEO_START
+  }
+}
+
+function onVideoTimeUpdate(e: Event) {
+  const video = e.target as HTMLVideoElement
+  if (video.currentTime >= VIDEO_END) {
+    video.currentTime = VIDEO_START
+  }
+}
 </script>
 
 <template>
@@ -16,21 +34,50 @@ useSeoMeta({
     <!-- Stats Bar -->
     <!-- <StatsCounter /> -->
 
+    <!-- Featured coffee story video -->
+    <section class="home-video-section py-section-sm bg-cream" aria-labelledby="home-video-title">
+      <div class="shell home-video-layout">
+        <div class="home-video-copy">
+          <span class="section-label">From Uganda's coffee story</span>
+          <h2 id="home-video-title" class="section-title">
+            The AFRICOFF <em>Coffee Story</em>
+          </h2>
+          <p>
+            See the care behind every lot, from the people who grow and prepare Uganda's coffee to the quality that reaches our partners.
+          </p>
+        </div>
+
+        <div class="home-video-frame">
+          <video
+            src="/assets/images/Sucafina%20Movie%202020.mp4"
+            title="The AFRICOFF Coffee Story"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            @loadedmetadata="onVideoLoadedMetadata"
+            @timeupdate="onVideoTimeUpdate"
+          />
+        </div>
+      </div>
+    </section>
+
     <!-- About Section with Asymmetric Image Layering -->
-    <section id="about" class="py-section-sm bg-offwhite">
+    <section id="about" class="py-section-lg bg-offwhite">
       <div class="shell">
         <div class="about-grid">
           <!-- Left: Layered Imagery -->
           <div class="about-images">
             <img
-              src="/assets/images/001.jpg"
-              alt="Handpicking ripe coffee cherries"
+              src="/assets/images/coffee-beans2.jpeg"
+              alt="Coffee cherries growing on a coffee tree"
               class="about-img-main"
               loading="lazy"
             />
             <img
-              src="/assets/images/1.jpg"
-              alt="Raised drying beds in Uganda"
+              src="/assets/images/coffee-sorting.webp"
+              alt="Workers sorting coffee cherries after harvest"
               class="about-img-accent"
               loading="lazy"
             />
@@ -185,6 +232,51 @@ useSeoMeta({
   animation: pulseDot 2.2s infinite;
 }
 
+/* Featured video */
+.home-video-layout {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.75fr) minmax(0, 1.25fr);
+  gap: 4rem;
+  align-items: center;
+}
+
+.home-video-copy {
+  max-width: 30rem;
+}
+
+.home-video-copy .section-title {
+  margin-bottom: 1rem;
+}
+
+.home-video-copy p {
+  margin-bottom: 1.25rem;
+}
+
+.home-video-copy .text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--gold-ink);
+  font-weight: 700;
+}
+
+.home-video-frame {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--forest-dark);
+  border: 1px solid rgba(16, 56, 30, 0.18);
+  border-radius: 18px;
+  box-shadow: var(--card-shadow-hover);
+}
+
+.home-video-frame iframe,
+.home-video-frame video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 @keyframes pulseDot {
   0% { box-shadow: 0 0 0 0 rgba(220, 252, 231, 0.7); }
   70% { box-shadow: 0 0 0 12px rgba(220, 252, 231, 0); }
@@ -332,6 +424,15 @@ useSeoMeta({
   .eudr-spotlight-grid {
     grid-template-columns: 1fr;
     gap: 3.5rem;
+  }
+
+  .home-video-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .home-video-copy {
+    max-width: 42rem;
   }
 }
 </style>

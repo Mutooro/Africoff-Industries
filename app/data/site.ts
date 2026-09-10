@@ -76,7 +76,7 @@ export const activities: Activity[] = [
     fullDesc: 'We champion climate-smart agroforestry, shade-tree planting, and organic soil regeneration. Our agronomy teams support plantations across Mount Elgon and the Rwenzori foothills.',
     features: ['High-altitude shade-grown Arabica & robust lowland varieties', 'Certified nursery seedlings and organic soil nourishment', 'Integrated pest and disease management systems'],
     icon: Sprout,
-    image: '/assets/images/001.jpg',
+    image: '/assets/images/coffee-beans2.jpeg',
   },
   {
     number: '02',
@@ -87,7 +87,7 @@ export const activities: Activity[] = [
     fullDesc: 'Equipped with modern eco-pulpers, raised solar drying beds, and optical color sorters to ensure every lot preserves its unique terroir and distinct sensory profile.',
     features: ['Eco-pulpers with 80% water recirculation', 'Sun-drying on raised African beds with humidity tracking', 'Precision gravimetric and optical sorting machines'],
     icon: Cog,
-    image: '/assets/images/1.jpg',
+    image: '/assets/images/coffee-sorting.webp',
   },
   {
     number: '03',
@@ -98,7 +98,7 @@ export const activities: Activity[] = [
     fullDesc: 'Retaining greater economic value within the country by developing premium single-origin roasts, signature espresso blends, and export-ready retail packaging.',
     features: ['Batch drum roasting with custom profile curves', 'Nitrogen-flushed freshness packaging', 'Private label roasting for hospitality and retail partners'],
     icon: Coffee,
-    image: '/assets/images/2.jpeg',
+    image: '/assets/images/coffee-01.jpeg',
   },
   {
     number: '04',
@@ -120,7 +120,7 @@ export const activities: Activity[] = [
     fullDesc: 'Partnering with over 5,000 smallholder out-growers — producing both Arabica and Natural Uganda Robusta (NUR) — across Uganda, through dedicated field extension officers, post-harvest training workshops, and pre-harvest financial support.',
     features: ['Good Agricultural Practices (GAP) field schools', 'Quality-tiered cash bonuses directly to farming families', 'Input advances and modern pruning equipment kits'],
     icon: Handshake,
-    image: '/assets/images/women.jpeg',
+    image: '/assets/images/Coffee-planting.webp',
   },
   {
     number: '06',
@@ -175,7 +175,7 @@ export const projects: Project[] = [
     summary: 'Upgrading 12 community washing stations on the volcanic slopes of Mount Elgon to produce 86+ cup score specialty micro-lots.',
     metric: '86.5 SCA',
     metricLabel: 'Average Cupping Score',
-    image: '/assets/images/3.jfif',
+    image: '/assets/images/coffee-sorting.webp',
     tags: ['Specialty Arabica', 'Washed Process', 'Mount Elgon'],
   },
   {
@@ -195,7 +195,7 @@ export const projects: Project[] = [
     summary: 'Distributing indigenous shade trees and fruit species to coffee farms to restore biodiversity and sequester carbon.',
     metric: '45,000+',
     metricLabel: 'Indigenous Trees Planted',
-    image: '/assets/images/image3.jpg',
+    image: '/assets/images/coffee-beans2.jpeg',
     tags: ['Shade-Grown', 'Carbon Insetting', 'Soil Health'],
   },
   {
@@ -337,7 +337,7 @@ export const farmServices: FarmService[] = [
       'Soil health, pest, and disease management guidance',
     ],
     icon: BookOpen,
-    image: '/assets/images/Coffee-Plant-in-uganda-africa-800x587.jpg',
+    image: '/assets/images/harvested-coffee.jpeg',
   },
   {
     id: 'nursery-beds',
@@ -350,7 +350,7 @@ export const farmServices: FarmService[] = [
       'Planting guidance and post-planting agronomy follow-up',
     ],
     icon: Sprout,
-    image: '/assets/images/nursery_bed.jpeg',
+    image: '/assets/images/Coffee-planting.webp',
   },
   {
     id: 'quality-testing',
@@ -553,6 +553,7 @@ export interface TeamMember {
   role: string
   initials: string
   bio: string
+  image?: string
   pending?: boolean
 }
 
@@ -562,6 +563,7 @@ export const teamMembers: TeamMember[] = [
     role: 'Managing Director / Director Production, Quality & Marketing',
     initials: 'MF',
     bio: 'Migadde Francis provides overall strategic leadership and corporate governance as Managing Director, and also serves as Director Production, Quality and Marketing. He drives the company’s growth agenda across sourcing, processing, and international exports, while championing ethical trade and shared prosperity for Uganda’s smallholder coffee farming communities.',
+    image: '/assets/images/Francis.jpeg',
   },
   {
     name: 'Kasujja Brian',
