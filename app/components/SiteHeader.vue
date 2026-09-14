@@ -87,7 +87,7 @@ onUnmounted(() => {
       <div class="shell navbar-inner">
         <!-- Logo -->
         <NuxtLink to="/" class="nav-logo" @click="closeMobileMenu">
-          <img src="/africoff.png" alt="AFRICOFF Industries (U) Ltd" />
+          <img src="/assets/images/new-logo.png" alt="AFRICOFF Industries (U) Ltd" />
         </NuxtLink>
 
         <!-- Desktop Navigation Links -->
@@ -222,20 +222,20 @@ onUnmounted(() => {
   color: rgba(255, 255, 255, 0.25);
 }
 
-/* Main Navbar */
+/* Main Navbar — light, so the full-colour logo reads naturally */
 .navbar {
-  background: rgba(10, 36, 19, 0.95);
+  background: rgba(253, 251, 247, 0.96); /* off-white */
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(212, 163, 56, 0.18);
+  border-bottom: 1px solid var(--parchment-border);
   padding: 0.85rem 0;
   transition: all 0.3s ease;
 }
 
 .is-scrolled .navbar {
-  background: rgba(10, 36, 19, 0.97);
+  background: rgba(253, 251, 247, 0.97);
   padding: 0.65rem 0;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 10px 30px rgba(35, 20, 12, 0.1);
 }
 
 .navbar-inner {
@@ -260,7 +260,7 @@ onUnmounted(() => {
 .nav-link {
   font-size: 0.92rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.88);
+  color: var(--forest);
   position: relative;
   padding: 0.4rem 0;
   transition: var(--transition);
@@ -273,12 +273,12 @@ onUnmounted(() => {
   left: 0;
   width: 0;
   height: 2px;
-  background-color: var(--gold-light);
+  background-color: var(--gold);
   transition: width 0.25s ease;
 }
 
 .nav-link:hover {
-  color: var(--gold-light);
+  color: var(--gold-hover);
 }
 
 .nav-link:hover::after,
@@ -287,7 +287,7 @@ onUnmounted(() => {
 }
 
 .nav-link.router-link-active {
-  color: #ffffff;
+  color: var(--forest-dark);
   font-weight: 700;
 }
 
@@ -307,21 +307,21 @@ onUnmounted(() => {
   display: block;
   width: 24px;
   height: 2px;
-  background-color: #ffffff;
+  background-color: var(--forest);
   border-radius: 2px;
   transition: all 0.3s ease;
 }
 
 .nav-toggle.is-active span:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
-  background-color: var(--gold-light);
+  background-color: var(--gold-hover);
 }
 .nav-toggle.is-active span:nth-child(2) {
   opacity: 0;
 }
 .nav-toggle.is-active span:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
-  background-color: var(--gold-light);
+  background-color: var(--gold-hover);
 }
 
 /* Backdrop overlay behind the mobile drawer */
@@ -349,8 +349,9 @@ onUnmounted(() => {
   width: min(85%, 360px);
   height: 100vh;
   height: 100dvh; /* correct height on iOS Safari with dynamic address bar */
-  background: var(--forest-dark);
-  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+  background: var(--offwhite);
+  border-left: 1px solid var(--parchment-border);
+  box-shadow: -10px 0 30px rgba(35, 20, 12, 0.25);
   z-index: 99;
   transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   overflow-y: auto;
@@ -379,13 +380,13 @@ onUnmounted(() => {
 .mobile-nav-link {
   font-size: 1.15rem;
   font-weight: 600;
-  color: #ffffff;
+  color: var(--forest);
   padding: 0.85rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid var(--parchment-border);
 }
 
 .mobile-nav-link.router-link-active {
-  color: var(--gold-light);
+  color: var(--gold-hover);
   border-color: var(--gold);
 }
 
@@ -398,7 +399,7 @@ onUnmounted(() => {
 
 .mobile-contact-info {
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--muted);
   line-height: 1.6;
 }
 

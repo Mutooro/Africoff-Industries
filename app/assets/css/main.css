@@ -109,6 +109,13 @@ h1 em, h2 em, h3 em {
   font-weight: 400;
 }
 
+/* Dark surfaces: the italic heading accent must stay readable against forest greens */
+.page-intro h1 em,
+.section-title.light em,
+.cta-inner h2 em {
+  color: var(--gold-light);
+}
+
 p {
   color: var(--roast-umber);
   font-family: var(--body-font);

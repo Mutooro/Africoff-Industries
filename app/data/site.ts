@@ -553,6 +553,7 @@ export interface TeamMember {
   role: string
   initials: string
   bio: string
+  credentials?: string[]
   image?: string
   pending?: boolean
 }
@@ -562,7 +563,15 @@ export const teamMembers: TeamMember[] = [
     name: 'Migadde Francis',
     role: 'Managing Director / Director Production, Quality & Marketing',
     initials: 'MF',
-    bio: 'Migadde Francis provides overall strategic leadership and corporate governance as Managing Director, and also serves as Director Production, Quality and Marketing. He drives the company’s growth agenda across sourcing, processing, and international exports, while championing ethical trade and shared prosperity for Uganda’s smallholder coffee farming communities.',
+    bio: 'Migadde Francis provides overall strategic leadership and corporate governance as Managing Director while directing production, quality, and marketing. A trained coffee quality controller and certified Q-Grader (Robusta), he personally leads cupping, grading, and quality assurance across sourcing, milling, and export lots, and his barista expertise shapes the company’s roasting profile and product experience. As a seasoned project manager, he oversees plantation development, out-grower schemes, and EUDR compliance programs — applying his professional land-surveyor background to farm mapping and polygon traceability, and his economist training to pricing, market strategy, and export growth — championing ethical trade and shared prosperity for Uganda’s smallholder coffee farming communities.',
+    credentials: [
+      'Certified Q-Grader (Robusta)',
+      'Coffee Quality Controller',
+      'Barista',
+      'Project Manager',
+      'Land Surveyor',
+      'Economist',
+    ],
     image: '/assets/images/Francis.jpeg',
   },
   {

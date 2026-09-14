@@ -20,7 +20,7 @@ function handleSubscribe() {
         <!-- Col 1: Brand Info -->
         <div class="footer-col brand-col">
           <NuxtLink to="/" class="footer-logo">
-            <img src="/africoff.png" alt="AFRICOFF Industries (U) Ltd" />
+            <img src="/assets/images/new-logo.png" alt="AFRICOFF Industries (U) Ltd" />
           </NuxtLink>
           <p class="footer-bio">
             AFRICOFF Industries (U) Limited bridges Ugandan smallholder farmers and global markets through sustainable agro-processing, EUDR-compliant polygon traceability, and specialty export excellence.
@@ -127,10 +127,20 @@ function handleSubscribe() {
   margin-bottom: 4.5rem;
 }
 
-.brand-col .footer-logo img {
-  height: 64px;
-  width: auto;
+/* Light chip behind the full-colour logo so it stays legible on the dark footer */
+.brand-col .footer-logo {
+  display: inline-block;
+  background: var(--offwhite);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 0.8rem 1.2rem;
+  border-radius: 14px;
   margin-bottom: 1.25rem;
+}
+
+.brand-col .footer-logo img {
+  display: block;
+  height: 56px;
+  width: auto;
 }
 
 .footer-bio {
@@ -240,6 +250,11 @@ function handleSubscribe() {
   border-color: var(--gold);
 }
 
+.newsletter-input::placeholder {
+  color: rgba(255, 255, 255, 0.45);
+  opacity: 1;
+}
+
 .newsletter-btn {
   background: var(--gold);
   color: var(--roast-espresso);
@@ -274,6 +289,17 @@ function handleSubscribe() {
   gap: 0.35rem;
 }
 
+/* Global `p`/`a` colours (roast-umber) leak onto the dark footer — force light here */
+.footer-contact-brief p,
+.footer-contact-brief p strong,
+.footer-contact-brief a {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.footer-contact-brief a:hover {
+  color: var(--gold-light);
+}
+
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: 2rem;
@@ -284,6 +310,10 @@ function handleSubscribe() {
   font-size: 0.85rem;
   flex-wrap: wrap;
   gap: 1rem;
+}
+
+.footer-bottom p {
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .footer-bottom-links {

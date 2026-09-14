@@ -1,6 +1,10 @@
 <script setup lang="ts">
+import { reactive } from 'vue'
 import { coreValues, stats, teamMembers, companyFacts, industryMemberships } from '~/data/site'
-import { Globe, Target, Flag, ArrowRight } from '@lucide/vue'
+import { Globe, Target, Flag, ArrowRight, ChevronDown } from '@lucide/vue'
+
+// Tracks which team bios are expanded (short profile + "View full profile" toggle)
+const expandedProfiles = reactive<Record<string, boolean>>({})
 
 useSeoMeta({
   title: 'About Us · AFRICOFF Industries (U) Limited',
@@ -156,7 +160,20 @@ useSeoMeta({
             </div>
             <h3 class="team-name">{{ member.name }}</h3>
             <span class="team-role">{{ member.role }}</span>
-            <p class="team-bio">{{ member.bio }}</p>
+            <div v-if="member.credentials && member.credentials.length" class="team-credentials">
+              <span v-for="cred in member.credentials" :key="cred" class="team-cred">{{ cred }}</span>
+            </div>
+            <p class="team-bio" :class="{ 'is-clamped': !expandedProfiles[member.name] }">{{ member.bio }}</p>
+            <button
+              v-if="member.bio.length > 200"
+              type="button"
+              class="team-more-btn"
+              :aria-expanded="!!expandedProfiles[member.name]"
+              @click="expandedProfiles[member.name] = !expandedProfiles[member.name]"
+            >
+              <span>{{ expandedProfiles[member.name] ? 'Show less' : 'View full profile' }}</span>
+              <ChevronDown class="team-more-caret" :class="{ 'is-open': !!expandedProfiles[member.name] }" :size="14" :stroke-width="2.5" />
+            </button>
             <span v-if="member.pending" class="team-pending">Profile pending publication</span>
           </article>
         </div>
@@ -406,7 +423,30 @@ useSeoMeta({
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--gold-hover);
+  margin-bottom: 0.9rem;
+}
+
+/* Team credential pills */
+.team-credentials {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem;
   margin-bottom: 1.1rem;
+}
+
+.team-cred {
+  font-family: var(--body-font);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--forest-light);
+  background: rgba(31, 84, 47, 0.07);
+  border: 1px solid rgba(31, 84, 47, 0.25);
+  padding: 0.3rem 0.75rem;
+  border-radius: 100px;
+  white-space: nowrap;
 }
 
 .team-bio {
@@ -416,6 +456,45 @@ useSeoMeta({
   line-height: 1.7;
   text-align: justify;
   text-justify: inter-word;
+}
+
+/* Short-profile clamp: 4 lines with "View full profile" expansion */
+.team-bio.is-clamped {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.team-more-btn {
+  margin-top: auto;
+  padding: 0.45rem 0.5rem 0.2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--body-font);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gold-hover);
+  transition: var(--transition);
+}
+
+.team-more-btn:hover {
+  color: var(--leaf);
+}
+
+.team-more-caret {
+  transition: transform 0.25s ease;
+}
+
+.team-more-caret.is-open {
+  transform: rotate(180deg);
 }
 
 @media (max-width: 1024px) {

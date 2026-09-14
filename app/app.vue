@@ -6,7 +6,7 @@ const siteUrl = runtimeConfig.public.siteUrl as string
 useSeoMeta({
   ogSiteName: 'AFRICOFF Industries (U) Limited',
   ogType: 'website',
-  ogImage: `${siteUrl}/africoff.png`,
+  ogImage: `${siteUrl}/assets/images/new-logo.png`,
   twitterCard: 'summary_large_image',
 })
 
@@ -25,7 +25,7 @@ useHead(() => ({
         '@type': 'Organization',
         name: 'AFRICOFF Industries (U) Limited',
         url: siteUrl,
-        logo: `${siteUrl}/africoff.png`,
+        logo: `${siteUrl}/assets/images/new-logo.png`,
         email: 'info@africoffindustries.com',
         address: {
           '@type': 'PostalAddress',

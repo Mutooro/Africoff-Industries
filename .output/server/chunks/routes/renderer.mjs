@@ -149,7 +149,7 @@ function lazyCachedFunction(fn) {
 	};
 }
 
-const appHead = {"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"name":"theme-color","content":"#0A2413"},{"name":"description","content":"AFRICOFF Industries connects Ugandan coffee growers with quality processing and global markets."},{"name":"robots","content":"index, follow"}],"link":[],"style":[],"script":[],"noscript":[],"htmlAttrs":{"lang":"en"},"titleTemplate":"%s · AFRICOFF Industries (U) Limited"};
+const appHead = {"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"name":"theme-color","content":"#0A2413"},{"name":"description","content":"AFRICOFF Industries connects Ugandan coffee growers with quality processing and global markets."},{"name":"robots","content":"index, follow"}],"link":[{"rel":"icon","type":"image/png","sizes":"32x32","href":"/favicon.png"},{"rel":"icon","type":"image/png","sizes":"any","href":"/favicon-512.png"},{"rel":"apple-touch-icon","sizes":"180x180","href":"/apple-touch-icon.png"}],"style":[],"script":[],"noscript":[],"htmlAttrs":{"lang":"en"},"titleTemplate":"%s · AFRICOFF Industries (U) Limited"};
 
 const appRootTag = "div";
 
@@ -259,7 +259,7 @@ const renderSSRHeadOptions = {"omitLineBreaks":true};
 
 const entryIds = [];
 
-const entryFileName = "DwmpG7Bx.js";
+const entryFileName = "Cha4wFrD.js";
 
 //#region src/runtime/handlers/renderer.ts
 globalThis.__buildAssetsURL = buildAssetsURL;

@@ -9,7 +9,7 @@ useSeoMeta({
 
 /* Home video segment loop: 1:04 (64s) → 1:08 (68s) */
 const VIDEO_START = 64
-const VIDEO_END = 68
+const VIDEO_END = 66
 
 /**
  * On SSR the <video> tag is in the raw HTML, so `loadedmetadata` usually fires

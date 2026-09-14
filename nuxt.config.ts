@@ -15,6 +15,11 @@ export default defineNuxtConfig({
         { name: 'description', content: 'AFRICOFF Industries connects Ugandan coffee growers with quality processing and global markets.' },
         { name: 'robots', content: 'index, follow' },
       ],
+      link: [
+        { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon.png' },
+        { rel: 'icon', type: 'image/png', sizes: 'any', href: '/favicon-512.png' },
+        { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
+      ],
     },
   },
   nitro: { prerender: { routes: ['/'] } },

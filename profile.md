@@ -212,7 +212,7 @@ Our management team includes experienced professionals with expertise in agricul
 
 | Role | Responsibility |
 |------|-----------------|
-| **Managing Director** | Overall strategy and direction |
+| **Managing Director** | Overall strategy and direction; oversees production, quality (trained Coffee Quality Controller & certified Q-Grader — Robusta), marketing and exports |
 | **Operations Manager** | Farm operations and processing |
 | **Sales and Marketing Manager** | Sales, marketing, and export |
 | **Finance Manager** | Financial management and accounting |

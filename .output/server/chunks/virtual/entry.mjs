@@ -994,7 +994,7 @@ var virtual_nuxt_node_modules_2F_cache_2Fnuxt_2F_nuxt_2Froutes_default = [
 	{
 		name: "about",
 		path: "/about",
-		component: () => import('../build/about-JirBxg7T.mjs')
+		component: () => import('../build/about-CCfFYJvY.mjs')
 	},
 	{
 		name: "accountability",
@@ -1004,17 +1004,17 @@ var virtual_nuxt_node_modules_2F_cache_2Fnuxt_2F_nuxt_2Froutes_default = [
 	{
 		name: "activities",
 		path: "/activities",
-		component: () => import('../build/activities-VeN0EV0W.mjs')
+		component: () => import('../build/activities-BdTobVsR.mjs')
 	},
 	{
 		name: "contact",
 		path: "/contact",
-		component: () => import('../build/contact-DLzjnQLs.mjs')
+		component: () => import('../build/contact-BqOCfrP7.mjs')
 	},
 	{
 		name: "impact",
 		path: "/impact",
-		component: () => import('../build/impact-0T4av7SD.mjs')
+		component: () => import('../build/impact-BtGSgYzf.mjs')
 	},
 	{
 		name: "news",
@@ -1024,7 +1024,7 @@ var virtual_nuxt_node_modules_2F_cache_2Fnuxt_2F_nuxt_2Froutes_default = [
 	{
 		name: "out-growers",
 		path: "/out-growers",
-		component: () => import('../build/out-growers-Ds2U0qxM.mjs')
+		component: () => import('../build/out-growers-Dyh3sYox.mjs')
 	},
 	{
 		name: "privacy",
@@ -1034,7 +1034,7 @@ var virtual_nuxt_node_modules_2F_cache_2Fnuxt_2F_nuxt_2Froutes_default = [
 	{
 		name: "products",
 		path: "/products",
-		component: () => import('../build/products-lsW36hr2.mjs')
+		component: () => import('../build/products-CFb6w5JD.mjs')
 	},
 	{
 		name: "programs",
@@ -1049,7 +1049,7 @@ var virtual_nuxt_node_modules_2F_cache_2Fnuxt_2F_nuxt_2Froutes_default = [
 	{
 		name: "index",
 		path: "/",
-		component: () => import('../build/pages-CaDLfpK6.mjs')
+		component: () => import('../build/pages-BPIK5Cjx.mjs')
 	}
 ];
 //#endregion
@@ -1304,7 +1304,7 @@ function resolveLayoutName(route, name) {
 }
 //#endregion
 //#region virtual:nuxt:node_modules%2F.cache%2Fnuxt%2F.nuxt%2Flayouts.mjs
-var virtual_nuxt_node_modules_2F_cache_2Fnuxt_2F_nuxt_2Flayouts_default = { default: defineAsyncComponent(() => import('../build/default-75u_Ek3j.mjs').then((m) => m.default || m)) };
+var virtual_nuxt_node_modules_2F_cache_2Fnuxt_2F_nuxt_2Flayouts_default = { default: defineAsyncComponent(() => import('../build/default-CsXDr5-t.mjs').then((m) => m.default || m)) };
 //#endregion
 //#region node_modules/nuxt/dist/app/components/nuxt-layout.js
 var LayoutLoader = defineComponent({
@@ -1533,7 +1533,7 @@ var app_vue_vue_type_script_setup_true_lang_default = /*@__PURE__*/ defineCompon
 		useSeoMeta$1({
 			ogSiteName: "AFRICOFF Industries (U) Limited",
 			ogType: "website",
-			ogImage: `${siteUrl}/africoff.png`,
+			ogImage: `${siteUrl}/assets/images/new-logo.png`,
 			twitterCard: "summary_large_image"
 		});
 		useHead$1(() => ({
@@ -1548,7 +1548,7 @@ var app_vue_vue_type_script_setup_true_lang_default = /*@__PURE__*/ defineCompon
 					"@type": "Organization",
 					name: "AFRICOFF Industries (U) Limited",
 					url: siteUrl,
-					logo: `${siteUrl}/africoff.png`,
+					logo: `${siteUrl}/assets/images/new-logo.png`,
 					email: "info@africoffindustries.com",
 					address: {
 						"@type": "PostalAddress",
