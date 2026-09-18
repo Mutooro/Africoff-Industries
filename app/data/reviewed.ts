@@ -32,6 +32,8 @@ export interface NewsArticle {
   publishedAt: string
   status: 'published' | 'draft'
   summary: string
+  image?: string
+  gallery?: string[]
 }
 
 export const valueChains: ValueChainProfile[] = [
@@ -182,4 +184,28 @@ export const programs: ProgramProfile[] = [
   },
 ]
 
-export const newsArticles: NewsArticle[] = []
+export const newsArticles: NewsArticle[] = [
+  {
+    slug: 'wakiso-coffee-workshop-and-farmer-visit',
+    title: 'Coffee Workshop at Wakiso District Headquarters and Farmer Visit in Bukasa',
+    publishedAt: '16 September 2026',
+    // DRAFT — awaiting editorial approval, participant consent confirmation and
+    // image-rights sign-off before it can go live. The news index only renders
+    // `published` items, so this stays private until flipped.
+    status: 'draft',
+    summary:
+      'On Wednesday 16 September 2026 the AFRICOFF team held a coffee workshop at Wakiso District Headquarters, and afterwards visited one of our coffee farmers in Bukasa, Wakiso District.',
+    gallery: [
+      '/assets/images/field_imgs/image_1.jpeg',
+      '/assets/images/field_imgs/image_2.jpeg',
+      '/assets/images/field_imgs/image_3.jpeg',
+      '/assets/images/field_imgs/image_4.jpeg',
+      '/assets/images/field_imgs/image_5.jpeg',
+      '/assets/images/field_imgs/image_6.jpeg',
+      '/assets/images/field_imgs/image_7.jpeg',
+      '/assets/images/field_imgs/image_8.jpeg',
+      '/assets/images/field_imgs/image_9.jpeg',
+      '/assets/images/field_imgs/image_10.jpeg',
+    ],
+  },
+]

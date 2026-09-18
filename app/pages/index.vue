@@ -6,49 +6,6 @@ useSeoMeta({
   title: 'AFRICOFF Industries — Sustainable Coffee Value Chains in Uganda',
   description: 'AFRICOFF Industries connects Ugandan coffee smallholders with modern agro-processing, EUDR-compliant polygon traceability, and premium global markets.',
 })
-
-/* Home video segment loop: 1:04 (64s) → 1:08 (68s) */
-const VIDEO_START = 64
-const VIDEO_END = 66
-
-/**
- * On SSR the <video> tag is in the raw HTML, so `loadedmetadata` usually fires
- * before Vue hydrates and attaches the listener — and some browsers drop seeks
- * made before media data is buffered. The seek is therefore retried from every
- * relevant lifecycle event, plus a `timeupdate` guard below.
- */
-function seekToLoopStart(video: HTMLVideoElement) {
-  if (video.currentTime < VIDEO_START) {
-    try {
-      video.currentTime = VIDEO_START
-    } catch {
-      /* not seekable yet — retried on the next event */
-    }
-  }
-}
-
-function onVideoLoadedMetadata(e: Event) {
-  seekToLoopStart(e.target as HTMLVideoElement)
-}
-
-function onVideoCanPlay(e: Event) {
-  seekToLoopStart(e.target as HTMLVideoElement)
-}
-
-function onVideoPlaying(e: Event) {
-  seekToLoopStart(e.target as HTMLVideoElement)
-}
-
-function onVideoTimeUpdate(e: Event) {
-  const video = e.target as HTMLVideoElement
-  if (video.currentTime < VIDEO_START) {
-    // Playback started from 0 (initial seek missed or native `loop` wrapped):
-    // jump into the loop window instead of letting the intro play.
-    seekToLoopStart(video)
-  } else if (video.currentTime >= VIDEO_END) {
-    video.currentTime = VIDEO_START
-  }
-}
 </script>
 
 <template>
@@ -76,22 +33,17 @@ function onVideoTimeUpdate(e: Event) {
           <noscript>
             <img src="/assets/images/coffee-sorting.webp" alt="Sorting Ugandan green coffee" loading="lazy" />
           </noscript>
-          <!-- Client-only mount: guarantees the seek-to-64s listeners exist before the
-               video can start playing. An SSR-rendered video autoplays from 0 before
-               Vue hydrates, which let the intro play before the loop engaged. -->
+          <!-- Own AFRICOFF footage (coffee export operations). Client-only mount keeps
+               autoplay behaviour consistent across SSR hydration. -->
           <ClientOnly>
             <video
-              src="/assets/images/Sucafina%20Movie%202020.mp4"
-              title="The AFRICOFF Coffee Story"
+              src="/assets/images/field_imgs/export_coffee.mp4"
+              title="AFRICOFF coffee export operations"
               autoplay
               muted
               loop
               playsinline
               preload="metadata"
-              @loadedmetadata="onVideoLoadedMetadata"
-              @canplay="onVideoCanPlay"
-              @playing="onVideoPlaying"
-              @timeupdate="onVideoTimeUpdate"
             />
           </ClientOnly>
         </div>

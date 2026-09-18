@@ -2,6 +2,9 @@
 import { newsArticles } from '~/data/reviewed'
 import { ArrowUpRight, ArrowRight } from '@lucide/vue'
 
+// Only approved, published stories may appear publicly — drafts stay behind this filter.
+const publishedArticles = newsArticles.filter(article => article.status === 'published')
+
 useSeoMeta({
   title: 'News and Stories · AFRICOFF',
   description: 'Read AFRICOFF updates, programme stories and evidence from Uganda coffee value chains.',
@@ -22,8 +25,8 @@ useSeoMeta({
 
     <section class="py-section bg-offwhite">
       <div class="shell">
-        <div v-if="newsArticles.length" class="values-grid">
-          <article v-for="article in newsArticles" :key="article.slug" class="val-card">
+        <div v-if="publishedArticles.length" class="values-grid">
+          <article v-for="article in publishedArticles" :key="article.slug" class="val-card">
             <span class="section-label">{{ article.publishedAt }}</span>
             <h2>{{ article.title }}</h2>
             <p>{{ article.summary }}</p>

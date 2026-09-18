@@ -24,6 +24,8 @@ const form = ref({
 const isSubmitting = ref(false)
 const isSubmitted = ref(false)
 const errorMessage = ref('')
+// Honeypot — hidden field; humans never fill it, spam bots do.
+const honeypot = ref('')
 
 onMounted(() => {
   if (route.query.product) {
@@ -33,23 +35,30 @@ onMounted(() => {
 })
 
 async function submitForm() {
-  isSubmitting.value = true
   errorMessage.value = ''
+
+  // Bot trap: silently drop, pretend success so bots don't adapt.
+  if (honeypot.value) {
+    isSubmitted.value = true
+    return
+  }
+
+  isSubmitting.value = true
 
   try {
     const res = await $fetch('/api/contact', {
       method: 'POST',
-      body: form.value,
+      body: { ...form.value, website: honeypot.value },
     })
 
     if (res && (res as any).ok) {
       isSubmitted.value = true
     } else {
-      isSubmitted.value = true // Fallback graceful confirmation
+      errorMessage.value = 'Your inquiry could not be processed right now. Please try again shortly.'
     }
-  } catch (err: any) {
-    // For demo or local without mail server, show success state
-    isSubmitted.value = true
+  } catch {
+    // Honest failure state — never fake success, or real buyer inquiries get lost.
+    errorMessage.value = 'Your inquiry could not be sent right now. Please try again shortly.'
   } finally {
     isSubmitting.value = false
   }
@@ -154,8 +163,29 @@ async function submitForm() {
                 </div>
               </div>
 
+              <!-- Error Alert -->
+              <div v-if="errorMessage && !isSubmitted" class="form-error-banner" role="alert">
+                <div>
+                  <h4>We couldn&rsquo;t send your inquiry</h4>
+                  <p>{{ errorMessage }} You can also reach the trade desk directly at
+                    <a href="mailto:info@africoffindustries.com" style="font-weight: 700;">info@africoffindustries.com</a>
+                    or +256 784 851 072 (WhatsApp available).
+                  </p>
+                </div>
+              </div>
+
               <!-- Form Inputs -->
               <form v-else class="interactive-form" @submit.prevent="submitForm">
+                <!-- Honeypot: visually hidden, ignored by humans -->
+                <input
+                  v-model="honeypot"
+                  type="text"
+                  name="website"
+                  tabindex="-1"
+                  autocomplete="off"
+                  class="hp-field"
+                  aria-hidden="true"
+                />
                 <div class="form-row-2">
                   <div class="form-group">
                     <label for="name">Your Name *</label>
@@ -404,6 +434,36 @@ async function submitForm() {
   color: #2b4534;
   font-size: 0.94rem;
   line-height: 1.6;
+}
+
+/* Honest failure state for the inquiry form */
+.form-error-banner {
+  background: rgba(185, 28, 28, 0.06);
+  border: 1.5px solid #dc2626;
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
+}
+
+.form-error-banner h4 {
+  color: #991b1b;
+  font-size: 1.1rem;
+  margin-bottom: 0.45rem;
+}
+
+.form-error-banner p {
+  color: #7f1d1d;
+  font-size: 0.94rem;
+  line-height: 1.6;
+}
+
+/* Honeypot field — must stay invisible but present for bots */
+.hp-field {
+  position: absolute !important;
+  left: -9999px !important;
+  width: 1px !important;
+  height: 1px !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
 }
 
 @media (max-width: 980px) {

@@ -246,7 +246,7 @@ onUnmounted(() => {
 }
 
 .nav-logo img {
-  height: 60px;
+  height: 75px;
   width: auto;
   object-fit: contain;
 }

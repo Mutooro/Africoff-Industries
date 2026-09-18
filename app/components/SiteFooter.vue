@@ -1,14 +1,33 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Briefcase, AtSign, ThumbsUp, Camera, MessageCircle, Flag, Check, QrCode } from '@lucide/vue'
+import { MessageCircle, Flag, Check, QrCode } from '@lucide/vue'
 
 const email = ref('')
 const isSubscribed = ref(false)
+const isSubscribing = ref(false)
+const subscribeError = ref('')
 
-function handleSubscribe() {
-  if (email.value) {
-    isSubscribed.value = true
-    email.value = ''
+async function handleSubscribe() {
+  subscribeError.value = ''
+  const value = email.value.trim()
+  if (!value || isSubscribing.value) return
+
+  isSubscribing.value = true
+  try {
+    const res = await $fetch('/api/newsletter', {
+      method: 'POST',
+      body: { email: value },
+    })
+    if (res && (res as any).ok) {
+      isSubscribed.value = true
+      email.value = ''
+    } else {
+      subscribeError.value = 'Subscription is temporarily unavailable. Please try again later.'
+    }
+  } catch {
+    subscribeError.value = 'Subscription is temporarily unavailable. Please try again later.'
+  } finally {
+    isSubscribing.value = false
   }
 }
 </script>
@@ -28,11 +47,10 @@ function handleSubscribe() {
           <div class="footer-origin-badge">
             <span><Flag :size="14" :stroke-width="2.5" /> Proudly Ugandan · Mount Elgon & Rwenzori Terroir</span>
           </div>
+          <!-- Only channels verified for launch. Re-add LinkedIn/X/Facebook/Instagram
+               pills once the official AFRICOFF page URLs exist — never link the
+               bare platform homepages. -->
           <div class="footer-socials">
-            <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-pill" aria-label="LinkedIn"><Briefcase :size="16" /></a>
-            <a href="https://twitter.com" target="_blank" rel="noopener" class="social-pill" aria-label="Twitter"><AtSign :size="16" /></a>
-            <a href="https://facebook.com" target="_blank" rel="noopener" class="social-pill" aria-label="Facebook"><ThumbsUp :size="16" /></a>
-            <a href="https://instagram.com" target="_blank" rel="noopener" class="social-pill" aria-label="Instagram"><Camera :size="16" /></a>
             <a href="https://wa.me/256784851072" target="_blank" rel="noopener" class="social-pill" aria-label="WhatsApp"><MessageCircle :size="16" /></a>
             <NuxtLink to="/contact#wechat" class="social-pill" aria-label="WeChat (scan QR code on the contact page)"><QrCode :size="16" /></NuxtLink>
           </div>
@@ -82,9 +100,10 @@ function handleSubscribe() {
               required
               class="newsletter-input"
             />
-            <button type="submit" class="newsletter-btn">Subscribe</button>
+            <button type="submit" :disabled="isSubscribing" class="newsletter-btn">{{ isSubscribing ? '…' : 'Subscribe' }}</button>
           </form>
           <p v-if="isSubscribed" class="subscribe-success"><Check :size="14" :stroke-width="3" /> Thank you for subscribing!</p>
+          <p v-else-if="subscribeError" class="subscribe-error" role="alert">{{ subscribeError }}</p>
 
           <div class="footer-contact-brief">
             <p><strong>HQ:</strong> 52 Kampala Road, King Fahad Plaza, 3rd Floor</p>
@@ -139,7 +158,7 @@ function handleSubscribe() {
 
 .brand-col .footer-logo img {
   display: block;
-  height: 56px;
+  height: 66px;
   width: auto;
 }
 
@@ -273,6 +292,13 @@ function handleSubscribe() {
 
 .subscribe-success {
   color: var(--sage);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.subscribe-error {
+  color: #fca5a5;
   font-size: 0.85rem;
   font-weight: 600;
   margin-bottom: 1rem;

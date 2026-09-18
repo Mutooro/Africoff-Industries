@@ -56,7 +56,7 @@ useSeoMeta({
             <p>
               For inquiries regarding data access, corrections, or polygon registration status, contact our compliance desk at:
               <br /><br />
-              <strong>Data Protection Desk:</strong> <a href="mailto:privacy@africoff.com" style="color: var(--leaf); font-weight: 700;">privacy@africoff.com</a><br />
+              <strong>Data Protection Desk:</strong> <a href="mailto:privacy@africoffindustries.com" style="color: var(--leaf); font-weight: 700;">privacy@africoffindustries.com</a><br />
               AFRICOFF Industries (U) Limited, 52 Kampala Road, King Fahad Plaza, 3rd Floor, P.O Box 178863, Kampala, Uganda.
             </p>
           </div>
