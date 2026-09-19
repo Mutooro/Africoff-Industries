@@ -129,7 +129,7 @@ export const activities: Activity[] = [
     category: 'export',
     shortDesc: 'Seamless international freight, container consolidation, and direct trade relationships with specialty roasters worldwide.',
     fullDesc: 'Handling bonded warehousing, phytosanitary clearance, container packing, and maritime freight from Mombasa port to global destinations across Europe, Asia, and the Americas.',
-    features: ['GrainPro hermetic bag packaging and bulk liner containers', 'Coffee Department (Ministry of Agriculture, Animal Industry & Fisheries) quality certification and phytosanitary clearance', 'FOB Mombasa and CIF destination port contracts'],
+    features: ['GrainPro hermetic bag packaging and bulk liner containers', 'Coffee Department (Ministry of Agriculture, Animal Industry & Fisheries) quality certification and phytosanitary clearance', 'FOB Mombasa, CIF destination port, and FOT Kampala contracts'],
     icon: Ship,
     image: '/assets/images/picking.jpg',
   },
@@ -345,6 +345,7 @@ export const farmServices: FarmService[] = [
     summary: 'We establish and manage nursery beds — including our own nursery bed in Kakiri along Hoima Road — multiplying disease-tolerant, high-yield coffee seedlings for our out-growers and new commercial plantings.',
     points: [
       'Our own nursery bed in Kakiri, along Hoima Road',
+      'CWD-resistant Robusta seedling varieties: CWD-r KR-1 to CWD-r KR-10',
       'Certified, disease-tolerant Arabica & Robusta seedling multiplication',
       'Quality seed sourcing and nursery management',
       'Planting guidance and post-planting agronomy follow-up',
@@ -496,6 +497,11 @@ export const researchDevelopment = {
 
 export const faqs: FaqItem[] = [
   {
+    category: 'Nursery & Seedlings',
+    question: 'Do you sell coffee seedlings, and which Robusta varieties do you offer?',
+    answer: 'Yes. Through our nursery bed in Kakiri (along Hoima Road) we supply certified, high-yield coffee seedlings to out-growers and commercial plantings. For Robusta we offer our CWD-resistant varieties — CWD-r KR-1 through CWD-r KR-10 — bred for tolerance to Coffee Wilt Disease, alongside quality Arabica seedlings, with planting guidance and post-planting agronomy follow-up.',
+  },
+  {
     category: 'Sourcing & Export',
     question: 'What coffee varieties and grades does AFRICOFF export?',
     answer: 'We supply green coffee beans including Bugisu Arabica (Grades AA, AB, PB), Rwenzori Natural Drugar, and Natural Uganda Robusta (NUR) in Screen 12, Screen 15, and Screen 18 grades. We also offer custom micro-lots and specialty roasted beans.',
@@ -518,7 +524,7 @@ export const faqs: FaqItem[] = [
   {
     category: 'Logistics',
     question: 'What are your minimum order quantities (MOQ) and shipping terms?',
-    answer: 'Our standard export volume is 1 FCL (Full Container Load = approx. 320 x 60kg bags in GrainPro liners). For specialty micro-lots, we accommodate smaller consolidated pallets under FOB Mombasa or CIF destination terms.',
+    answer: 'Our standard export volume is 1 FCL (Full Container Load = approx. 320 x 60kg bags in GrainPro liners). For specialty micro-lots, we accommodate smaller consolidated pallets under FOB Mombasa, CIF destination, or FOT (Free On Truck) Kampala terms.',
   },
 ]
 

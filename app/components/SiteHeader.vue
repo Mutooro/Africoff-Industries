@@ -88,6 +88,7 @@ onUnmounted(() => {
         <!-- Logo -->
         <NuxtLink to="/" class="nav-logo" @click="closeMobileMenu">
           <img src="/assets/images/new-logo.png" alt="AFRICOFF Industries (U) Ltd" />
+          <span class="nav-logo-motto">Growing a Sustainable Future</span>
         </NuxtLink>
 
         <!-- Desktop Navigation Links -->
@@ -245,10 +246,26 @@ onUnmounted(() => {
   gap: 2rem;
 }
 
+.nav-logo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  line-height: 1;
+}
+
 .nav-logo img {
-  height: 75px;
+  height: 70px;
   width: auto;
   object-fit: contain;
+}
+
+.nav-logo-motto {
+  font-size: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-ink, #a07717);
+  white-space: nowrap;
 }
 
 .desktop-nav {
@@ -423,7 +440,11 @@ onUnmounted(() => {
     gap: 1rem;
   }
   .nav-logo img {
-    height: 48px;
+    height: 60px;
+  }
+  .nav-logo-motto {
+    font-size: 0.55rem;
+    letter-spacing: 0.1em;
   }
   .nav-toggle {
     padding: 0.65rem 0.5rem; /* larger tap target */

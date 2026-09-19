@@ -40,6 +40,7 @@ async function handleSubscribe() {
         <div class="footer-col brand-col">
           <NuxtLink to="/" class="footer-logo">
             <img src="/assets/images/new-logo.png" alt="AFRICOFF Industries (U) Ltd" />
+            <span class="footer-logo-motto">Growing a Sustainable Future</span>
           </NuxtLink>
           <p class="footer-bio">
             AFRICOFF Industries (U) Limited bridges Ugandan smallholder farmers and global markets through sustainable agro-processing, EUDR-compliant polygon traceability, and specialty export excellence.
@@ -158,8 +159,18 @@ async function handleSubscribe() {
 
 .brand-col .footer-logo img {
   display: block;
-  height: 66px;
+  height: 60px;
   width: auto;
+}
+
+.footer-logo-motto {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-light, #e5b93c);
 }
 
 .footer-bio {
